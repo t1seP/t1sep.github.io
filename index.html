@@ -1,231 +1,512 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тимофій Сепітий | Google Ads & Маркетингові Технології</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
-                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #ffffff;
-            color: #1f2937;
-            scroll-behavior: smooth;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тимофій Сепітий | Google Ads & Маркетингові Технології</title>
+<meta name="description" content="Незалежний спеціаліст з Google Ads у Києві. Аудити акаунтів, прогнози бюджету на реальних даних, запуск і ведення пошукових, Performance Max і торгових кампаній.">
+<meta name="theme-color" content="#0C0E12">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230C0E12'/%3E%3Crect x='6' y='20' width='4' height='6' rx='1' fill='%237BA6FF'/%3E%3Crect x='14' y='14' width='4' height='12' rx='1' fill='%237BA6FF'/%3E%3Crect x='22' y='7' width='4' height='19' rx='1' fill='%234ED6A8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C0E12;
+  --surface:#14171D;
+  --surface-2:#191D25;
+  --line:#252A34;
+  --line-soft:#1D222A;
+  --ink:#E7EAF0;
+  --ink-2:#98A1B2;
+  --ink-3:#5F6979;
+  --accent:#7BA6FF;      /* ідентичність, посилання */
+  --up:#4ED6A8;          /* показник покращився */
+  --down:#E0908C;        /* виключено, відсіяно */
+  --radius:6px;
+  --maxw:840px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+/* ── шапка ─────────────────────────────────── */
+.head{position:sticky;top:0;z-index:50;background:rgba(12,14,18,.88);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft)}
+.head .wrap{display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding-top:16px;padding-bottom:16px}
+.mark{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink);font-weight:500}
+.mark span{color:var(--ink-3)}
+.nav{display:flex;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  letter-spacing:.06em;flex-wrap:wrap}
+.nav a{color:var(--ink-2)}
+.nav a:hover{color:var(--ink);text-decoration:none}
+
+/* ── секції ────────────────────────────────── */
+main{padding:56px 0 0}
+.sec{padding:64px 0;border-top:1px solid var(--line-soft);scroll-margin-top:84px}
+.sec:first-child{border-top:0;padding-top:8px}
+.sec-h{margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.02em}
+.sec-sub{margin:0 0 28px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--ink-3);letter-spacing:.06em}
+
+/* ── герой ─────────────────────────────────── */
+.status{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;
+  font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);
+  border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--up)}
+h1{font-family:'Unbounded',sans-serif;font-weight:700;letter-spacing:-.02em;
+  font-size:clamp(34px,7vw,54px);line-height:1.04;margin:22px 0 18px}
+.lede{font-size:17px;color:var(--ink);max-width:60ch;margin:0 0 14px}
+.lede-2{font-size:14.5px;color:var(--ink-2);max-width:62ch;margin:0 0 22px}
+.meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3);
+  letter-spacing:.08em;text-transform:uppercase;margin:0 0 30px}
+
+/* ── панель-підпис: рядки даних ────────────── */
+.panel{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
+  overflow:hidden}
+.panel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:11px 16px;border-bottom:1px solid var(--line);background:var(--surface-2);
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:11px 16px;border-top:1px solid var(--line-soft);
+  font-family:'JetBrains Mono',monospace;font-size:12.5px}
+.row:first-of-type{border-top:0}
+.row-q{color:var(--ink-2);overflow-wrap:anywhere}
+.chip{font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;
+  border-radius:4px;white-space:nowrap;font-weight:500}
+.chip-keep{color:var(--up);background:rgba(78,214,168,.10);border:1px solid rgba(78,214,168,.28)}
+.chip-cut{color:var(--down);background:rgba(224,144,140,.09);border:1px solid rgba(224,144,140,.26)}
+.panel-foot{padding:11px 16px;border-top:1px solid var(--line);
+  font-size:11.5px;color:var(--ink-3);line-height:1.5}
+
+/* ── картки ────────────────────────────────── */
+.grid{display:grid;gap:14px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
+  padding:18px;transition:border-color .18s ease}
+.card:hover{border-color:#333A47}
+.card h3{margin:0 0 7px;font-size:13.5px;font-weight:600}
+.card p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.6}
+.tag{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:9px}
+
+/* ── кейси: рядки звіту ────────────────────── */
+.case{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
+  margin-bottom:14px;overflow:hidden}
+.case-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;padding:15px 18px;border-bottom:1px solid var(--line)}
+.case-top h3{margin:0;font-size:13.5px;font-weight:600}
+.case-top .tag{margin:0}
+.case-what{padding:13px 18px;font-size:12.5px;color:var(--ink-2);
+  border-bottom:1px solid var(--line-soft);line-height:1.6}
+.mrow{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;
+  padding:10px 18px;border-top:1px solid var(--line-soft);
+  font-family:'JetBrains Mono',monospace;font-size:12.5px}
+.mrow:first-of-type{border-top:0}
+.mrow-l{color:var(--ink-2)}
+.mrow-v{font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.v-up{color:var(--up)}
+.v-flat{color:var(--ink-2)}
+
+/* ── цитати ────────────────────────────────── */
+.quote{border:1px solid var(--line);border-left:2px solid var(--line);
+  border-radius:var(--radius);background:var(--surface);padding:18px}
+.quote p{margin:0 0 10px;font-size:13px;color:var(--ink-2);line-height:1.65}
+.quote cite{font-family:'JetBrains Mono',monospace;font-size:10px;font-style:normal;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ── список принципів ──────────────────────── */
+.pr{list-style:none;margin:0;padding:0;display:grid;gap:11px;grid-template-columns:repeat(2,1fr)}
+.pr li{display:flex;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.6}
+.pr b{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3);
+  flex:none;padding-top:3px}
+
+/* ── блок для рев'ю Google ─────────────────── */
+.api-note{border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--surface-2);padding:18px;margin-top:14px}
+.api-note .badge{display:inline-flex;align-items:center;gap:7px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:11px}
+.api-note .badge i{width:6px;height:6px;border-radius:50%;background:var(--accent);display:block}
+.api-note p{margin:0 0 10px;font-size:12.5px;color:var(--ink-2);line-height:1.65}
+.api-note ul{margin:0;padding-left:17px;font-size:12px;color:var(--ink-3);line-height:1.7}
+.api-note strong{color:var(--ink-2);font-weight:600}
+
+/* ── контакти ──────────────────────────────── */
+.contact{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
+  padding:20px}
+.contact-top{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line-soft)}
+.lbl{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
+.mail{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:500;
+  color:var(--ink);user-select:all}
+.btn{display:inline-block;background:var(--accent);color:#0B0E14;font-weight:600;
+  font-size:13px;padding:10px 18px;border-radius:var(--radius);
+  transition:filter .18s ease;white-space:nowrap}
+.btn:hover{filter:brightness(1.1);text-decoration:none}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding-top:16px}
+.contact-grid p{margin:0;font-size:13.5px;color:var(--ink)}
+.contact-grid .mono{font-family:'JetBrains Mono',monospace;user-select:all}
+
+/* ── підвал ────────────────────────────────── */
+footer{border-top:1px solid var(--line-soft);margin-top:64px;padding:28px 0 36px;
+  background:#0A0C10}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer p{margin:0 0 4px;font-size:12px;color:var(--ink-2)}
+footer .fine{font-size:11px;color:var(--ink-3);line-height:1.6}
+.legal{display:flex;gap:16px;font-family:'JetBrains Mono',monospace;font-size:11px}
+.legal button{background:none;border:0;color:var(--ink-2);cursor:pointer;
+  text-decoration:underline;font:inherit;padding:0}
+.legal button:hover{color:var(--ink)}
+
+/* ── модалки ───────────────────────────────── */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(6,8,11,.72);
+  backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-box{background:var(--surface);border:1px solid var(--line);border-radius:8px;
+  max-width:520px;width:100%;max-height:78vh;overflow-y:auto;padding:22px}
+.modal-top{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-bottom:12px;border-bottom:1px solid var(--line-soft);margin-bottom:14px}
+.modal-top h4{margin:0;font-size:13.5px;font-weight:600}
+.modal-top button{background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2);
+  font:inherit;font-size:11px;padding:4px 10px;border-radius:4px;cursor:pointer}
+.modal-box p{margin:0 0 9px;font-size:12.5px;color:var(--ink-2);line-height:1.65}
+.modal-box p.h{color:var(--ink);font-weight:600;margin-top:14px}
+
+/* ── поява ─────────────────────────────────── */
+.rise{opacity:0;transform:translateY(8px);animation:rise .5s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .rise{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* ── адаптив ───────────────────────────────── */
+@media (max-width:720px){
+  .g3,.g2,.pr,.contact-grid{grid-template-columns:1fr}
+  .head .wrap{flex-direction:column;align-items:flex-start;gap:10px}
+  .nav{gap:14px}
+  .sec{padding:48px 0}
+  .row{flex-direction:column;align-items:flex-start;gap:7px}
+}
+</style>
 </head>
-<body class="min-h-screen flex flex-col justify-between antialiased bg-white">
-    <!-- Навігація -->
-    <header class="border-b border-gray-200 bg-white/95 sticky top-0 z-50">
-        <div class="max-w-3xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <span class="font-mono text-xs font-bold uppercase tracking-wider text-gray-900">sepityy // ads-portfolio</span>
-            </div>
-            <nav class="flex gap-5 text-xs font-mono text-gray-600">
-                <a href="#about" class="hover:text-black transition-colors">Про мене</a>
-                <a href="#services" class="hover:text-black transition-colors">Послуги</a>
-                <a href="#api" class="hover:text-black transition-colors">Чому API</a>
-                <a href="#contacts" class="hover:text-black transition-colors">Контакти</a>
-            </nav>
-        </div>
-    </header>
-    <!-- Основний контент -->
-    <main class="max-w-3xl mx-auto px-6 py-12 space-y-16 w-full flex-grow">
-        <!-- 1. HERO СЕКЦІЯ -->
-        <section id="about" class="py-4 space-y-5">
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-gray-100 border border-gray-200 text-xs font-mono text-gray-600">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                PPC Specialist / Developer
-            </div>
+<body>
 
-            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
-                Тимофій Сепітий
-            </h1>
+<header class="head">
+  <div class="wrap">
+    <div class="mark">sepityi <span>// google ads</span></div>
+    <nav class="nav">
+      <a href="#about">Про мене</a>
+      <a href="#services">Послуги</a>
+      <a href="#cases">Кейси</a>
+      <a href="#method">Метод</a>
+      <a href="#api">Чому API</a>
+      <a href="#contacts">Контакти</a>
+    </nav>
+  </div>
+</header>
 
-            <p class="text-base text-gray-700 leading-relaxed">
-                Я займаюся професійним управлінням контекстною рекламою в <strong>Google Ads</strong> для малого та середнього бізнесу в Україні.
-                Мій підхід поєднує класичний маркетинг та автоматизацію: я налаштовую аналітику, підключаю відстеження конверсій та будую зручне регулярне звітування для клієнтів за допомогою <strong>Google Ads API</strong>.
-            </p>
-            <p class="text-sm text-gray-600 leading-relaxed">
-                Веду пошукові, Performance Max і торгові кампанії для сервісного бізнесу та інтернет-магазинів — від аудиту й запуску до оптимізації та щомісячної звітності.
-            </p>
-            <div class="pt-1">
-                <a href="#contacts" class="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors">
-                    Зв'язатися зі мною &rarr;
-                </a>
-            </div>
-        </section>
-        <!-- 2. ПОСЛУГИ -->
-        <section id="services" class="space-y-6 border-t border-gray-100 pt-12">
-          <div class="space-y-1">
-            <h2 class="text-lg font-bold text-gray-900 tracking-tight">Послуги</h2>
-            <p class="text-xs font-mono text-gray-500">експертиза та напрямки роботи</p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <!-- Послуга 1 -->
-            <div class="p-5 rounded bg-gray-50 border border-gray-200 space-y-2">
-              <span class="font-mono text-xs text-gray-400">01 /</span>
-              <h3 class="text-sm font-bold text-gray-900">Управління Google Ads</h3>
-              <p class="text-xs text-gray-600 leading-relaxed">
-                Повний цикл: від збору семантики та написання оголошень до тонкого оптимізування ставок, ведення Performance Max і торгових кампаній в Україні.
-              </p>
-            </div>
-            <!-- Послуга 2 -->
-            <div class="p-5 rounded bg-gray-50 border border-gray-200 space-y-2">
-              <span class="font-mono text-xs text-gray-400">02 /</span>
-              <h3 class="text-sm font-bold text-gray-900">Аналіз ефективності</h3>
-              <p class="text-xs text-gray-600 leading-relaxed">
-                Регулярний аудит облікових записів, контроль цільових показників вартості клієнта (CAC), аналіз конверсій та відключення зливу бюджетів.
-              </p>
-            </div>
-            <!-- Послуга 3 -->
-            <div class="p-5 rounded bg-gray-50 border border-gray-200 space-y-2">
-              <span class="font-mono text-xs text-gray-400">03 /</span>
-              <h3 class="text-sm font-bold text-gray-900">Налаштування конверсій</h3>
-              <p class="text-xs text-gray-600 leading-relaxed">
-                Встановлення та супровід Google Analytics 4 (GA4) через захищене середовище Google Tag Manager (GTM). Налаштування трекінгу кнопок і форм.
-              </p>
-            </div>
-          </div>
-        </section>
-        <!-- 2b. ЯК Я ПРАЦЮЮ -->
-        <section id="approach" class="space-y-6 border-t border-gray-100 pt-12">
-            <div class="space-y-1">
-                <h2 class="text-lg font-bold text-gray-900 tracking-tight">Як я працюю</h2>
-                <p class="text-xs font-mono text-gray-500">принципи ведення акаунтів</p>
-            </div>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-sm text-gray-700">
-                <li class="flex gap-2"><span class="text-gray-400 font-mono text-xs mt-1">—</span><span>Невеликий пул клієнтів — кожен акаунт веду особисто.</span></li>
-                <li class="flex gap-2"><span class="text-gray-400 font-mono text-xs mt-1">—</span><span>Рутину — звіти, збір статистики, моніторинг запитів — автоматизую; рішення лишаю за собою.</span></li>
-                <li class="flex gap-2"><span class="text-gray-400 font-mono text-xs mt-1">—</span><span>Щомісячний звіт зрозумілою мовою: що зроблено, що змінилось, що далі.</span></li>
-                <li class="flex gap-2"><span class="text-gray-400 font-mono text-xs mt-1">—</span><span>Ваш акаунт — ваш: кампанії будую у вашому кабінеті, доступи лишаються у вас.</span></li>
-            </ul>
-        </section>
-        <!-- 3. ЧОМУ API -->
-        <section id="api" class="space-y-6 border-t border-gray-100 pt-12">
-            <div class="space-y-1">
-                <h2 class="text-lg font-bold text-gray-900 tracking-tight">Маркетингова Автоматизація та API</h2>
-                <p class="text-xs font-mono text-gray-500">обробка даних та побудова утиліт</p>
-            </div>
-            <div class="p-5 rounded bg-gray-50 border border-gray-200 space-y-4">
-                <p class="text-sm text-gray-700 leading-relaxed">
-                    Я використовую <strong>Google Ads API</strong> для автоматизації звітів і побудови власних модулів аналітики.
-                    Це дозволяє отримати доступ до щоденної статистики напряму, створювати зручні зведені звіти без ручних помилок для клієнтських акаунтів.
-                </p>
-                <!-- Розділ сумісності для погодження токену -->
-                <div class="p-4 rounded bg-white border border-gray-200 space-y-3">
-                    <div class="flex items-center gap-1.5 font-bold text-gray-900 font-mono text-[11px] uppercase tracking-wide text-blue-600">
-                        <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-                        Для Google API Audit Team / Developer Token Review
-                    </div>
-                    <p class="text-xs text-gray-600 leading-relaxed">
-                        Цей веб-ресурс є офіційним сайтом-портфоліо незалежного спеціаліста з маркетингу. Я подаю запит на отримання
-                        <strong>Developer Token</strong> для розробки внутрішнього застосунку (<strong>Internal Tool</strong>), який працює з рекламними акаунтами під керуванням мого MCC-акаунта — моїми власними та акаунтами клієнтів, які надали мені доступ.
-                    </p>
-                    <ul class="list-disc pl-4 space-y-1 text-xs text-gray-500 leading-relaxed">
-                        <li><strong>Звітність:</strong> автоматичне вивантаження щоденних метрик (покази, кліки, конверсії, пошукові запити) та побудова зведених звітів для клієнтів.</li>
-                        <li><strong>Керування кампаніями:</strong> створення й редагування кампаній, груп оголошень, ключових слів, мінус-слів та адаптивних пошукових оголошень.</li>
-                        <li><strong>Дослідження та прогнози:</strong> збір семантики й побудова медіапланів через Keyword Planner (KeywordPlanIdeaService / GenerateKeywordForecastMetrics).</li>
-                        <li><strong>Обмеження доступу:</strong> ПЗ використовується виключно мною та безпосередніми клієнтами, яким я надаю послуги. Доступ третім особам заборонено; дані клієнтів не передаються й не перепродаються.</li>
-                        <li><strong>Безпека:</strong> дані обробляються згідно з Google Ads API Terms &amp; Conditions та Limited Use Requirements.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!-- 4. КОНТАКТИ -->
-        <section id="contacts" class="space-y-6 border-t border-gray-100 pt-12">
-            <div class="space-y-1">
-                <h2 class="text-lg font-bold text-gray-900 tracking-tight">Контакти</h2>
-                <p class="text-xs font-mono text-gray-500">напишіть мені для консультації або замовлення</p>
-            </div>
-            <div class="p-5 rounded bg-gray-50 border border-gray-200 space-y-4">
-                <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
-                    <div class="space-y-1 text-left">
-                        <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block">Офіційний email</span>
-                        <p class="text-base font-mono font-bold text-gray-900 select-all">tymofii@sepityi.com</p>
-                    </div>
-                    <a href="mailto:tymofii@sepityi.com" class="px-4 py-2 bg-gray-900 hover:bg-black text-white text-xs font-mono rounded transition-colors whitespace-nowrap">
-                        Надіслати листа &rarr;
-                    </a>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-gray-200 pt-4">
-                    <div class="space-y-1">
-                        <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block">Телефон</span>
-                        <p class="text-sm font-mono text-gray-800 select-all">+380 96 276 5144</p>
-                    </div>
-                    <div class="space-y-1">
-                        <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block">Адреса</span>
-                        <p class="text-sm text-gray-800">вул. Івана Дзюби, Київ, Україна</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- Підвал сайту з Політиками Конфіденційності (ОБОВ'ЯЗКОВО ДЛЯ GOOGLE TOKEN VALIDATION) -->
-    <footer class="border-t border-gray-200 bg-gray-50 py-8 px-6 text-xs text-gray-500 mt-12">
-        <div class="max-w-3xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="space-y-1 text-center sm:text-left">
-                <p>&copy; 2026 Сепітий Тимофій Ігорович. Всі права захищено.</p>
-                <p class="text-[10px] text-gray-400">Незалежний спеціаліст з Google Ads (self-employed) · Київ, Україна · tymofii@sepityi.com · +380 96 276 5144</p>
-            </div>
+<main>
 
-            <div class="flex gap-4 font-mono text-[11px] text-gray-600">
-                <button onclick="toggleModal('privacy')" class="hover:text-black underline cursor-pointer">
-                    Privacy Policy
-                </button>
-                <button onclick="toggleModal('terms')" class="hover:text-black underline cursor-pointer">
-                    Terms of Service
-                </button>
-            </div>
+  <!-- ГЕРОЙ -->
+  <section class="sec" id="about">
+    <div class="wrap">
+      <div class="status rise"><span class="dot"></span>PPC Specialist / Developer</div>
+      <h1 class="rise" style="animation-delay:.05s">Тимофій<br>Сепітий</h1>
+      <p class="lede rise" style="animation-delay:.1s">
+        Веду контекстну рекламу в <strong>Google Ads</strong> для сервісного бізнесу та інтернет-магазинів.
+        Налаштовую аналітику, підключаю відстеження конверсій і будую регулярне звітування
+        через <strong>Google Ads API</strong>.
+      </p>
+      <p class="lede-2 rise" style="animation-delay:.14s">
+        Пошукові кампанії, Performance Max, торгові: від аудиту й запуску до оптимізації
+        та щомісячної звітності.
+      </p>
+      <p class="meta rise" style="animation-delay:.18s">Київ · Україна / Канада / США · Search · PMax · Shopping</p>
+
+      <!-- підпис сторінки: як виглядає щоденна чистка запитів -->
+      <div class="panel rise" style="animation-delay:.24s">
+        <div class="panel-top">
+          <span>Пошукові запити · щоденна перевірка</span>
+          <span>приклад</span>
         </div>
-    </footer>
-    <!-- Юридичні вікна -->
-    <div id="modal-privacy" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4">
-        <div class="bg-white border border-gray-200 rounded p-6 max-w-lg w-full max-h-[75vh] overflow-y-auto space-y-4 shadow-xl">
-            <div class="flex justify-between items-center border-b border-gray-100 pb-2">
-                <h4 class="text-sm font-bold text-gray-900">Privacy Policy</h4>
-                <button onclick="toggleModal('privacy')" class="text-xs text-gray-500 hover:text-black px-2 py-1 bg-gray-100 rounded border border-gray-200 cursor-pointer">Close</button>
-            </div>
-            <div class="text-[11px] text-gray-600 space-y-2 leading-relaxed">
-                <p class="font-bold text-gray-900">1. Захист даних</p>
-                <p>Ми збираємо виключно добровільно надані контактні дані зацікавлених замовників (Email) для комунікації.</p>
-                <p class="font-bold text-gray-900">2. Google Ads API та конфіденційність</p>
-                <p>Будь-які маркетингові дані, отримані з Google Ads API, використовуються виключно для потреб автоматизації звітності відповідних клієнтів (Limited Use Requirements).</p>
-            </div>
+        <div class="row"><span class="row-q">монтаж опалення львів ціна</span><span class="chip chip-keep">лишити</span></div>
+        <div class="row"><span class="row-q">монтаж опалення своїми руками</span><span class="chip chip-cut">виключити</span></div>
+        <div class="row"><span class="row-q">встановлення газового котла львів</span><span class="chip chip-keep">лишити</span></div>
+        <div class="row"><span class="row-q">схема опалення креслення безкоштовно</span><span class="chip chip-cut">виключити</span></div>
+        <div class="row"><span class="row-q">монтажник опалення вакансія</span><span class="chip chip-cut">виключити</span></div>
+        <div class="panel-foot">
+          Саме тут зазвичай і витікає бюджет. Прочитати тисячі запитів щотижня руками неможливо,
+          тому їх ніхто не читає. У мене це робить скрипт щодня, а спірні випадки виносить мені на рішення.
         </div>
+      </div>
     </div>
-    <div id="modal-terms" class="hidden fixed inset-0 z-55 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4">
-        <div class="bg-white border border-gray-200 rounded p-6 max-w-lg w-full max-h-[75vh] overflow-y-auto space-y-4 shadow-xl">
-            <div class="flex justify-between items-center border-b border-gray-100 pb-2">
-                <h4 class="text-sm font-bold text-gray-900">Terms of Service</h4>
-                <button onclick="toggleModal('terms')" class="text-xs text-gray-500 hover:text-black px-2 py-1 bg-gray-100 rounded border border-gray-200 cursor-pointer">Close</button>
-            </div>
-            <div class="text-[11px] text-gray-600 space-y-2 leading-relaxed">
-                <p class="font-bold text-gray-900">1. Опис сервісу</p>
-                <p>Тимофій Сепітий надає послуги супроводу контекстної реклами та програмування автоматичних звітів за допомогою Google Ads API.</p>
-                <p class="font-bold text-gray-900">2. Права інтелектуальної власності</p>
-                <p>Всі розроблені скрипти звітування є комерційними розробками та недоступні публічно без додаткового погодження сторін.</p>
-            </div>
+  </section>
+
+  <!-- ПОСЛУГИ -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <h2 class="sec-h">Послуги</h2>
+      <p class="sec-sub">напрямки роботи</p>
+      <div class="grid g3">
+        <div class="card">
+          <span class="tag">Управління</span>
+          <h3>Ведення Google Ads</h3>
+          <p>Повний цикл: збір семантики, структура кампаній, оголошення, ставки, ведення
+             Performance Max і торгових кампаній.</p>
         </div>
+        <div class="card">
+          <span class="tag">Діагностика</span>
+          <h3>Аудит акаунту</h3>
+          <p>Перевірка акаунту за 53 пунктами: структура, семантика, оголошення, мінус-слова,
+             гео, налаштування, конверсії. Пріоритезований список правок.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Аналітика</span>
+          <h3>Налаштування конверсій</h3>
+          <p>Google Analytics 4 через Google Tag Manager, трекінг форм, кнопок і дзвінків.
+             Без цього ставки нема на чому вчити.</p>
+        </div>
+      </div>
     </div>
-    <script>
-        function toggleModal(id) {
-            const el = document.getElementById('modal-' + id);
-            if (el) el.classList.toggle('hidden');
-        }
-    </script>
+  </section>
+
+  <!-- КЕЙСИ -->
+  <section class="sec" id="cases">
+    <div class="wrap">
+      <h2 class="sec-h">Кейси</h2>
+      <p class="sec-sub">зміни за місяць роботи в акаунті</p>
+
+      <article class="case">
+        <div class="case-top">
+          <h3>Покрівельні роботи, Північна Америка</h3>
+          <span class="tag">послуги</span>
+        </div>
+        <p class="case-what">Перебудував структуру кампаній під сезонність попиту, вичистив
+          нецільовий трафік, перевів кампанії на цільову ціну конверсії.</p>
+        <div class="mrow"><span class="mrow-l">заявки</span><span class="mrow-v v-up">+70%</span></div>
+        <div class="mrow"><span class="mrow-l">ціна заявки</span><span class="mrow-v v-up">-42%</span></div>
+        <div class="mrow"><span class="mrow-l">CTR у пошуку</span><span class="mrow-v v-up">+37%</span></div>
+        <div class="mrow"><span class="mrow-l">витрати</span><span class="mrow-v v-flat">без змін</span></div>
+      </article>
+
+      <article class="case">
+        <div class="case-top">
+          <h3>B2B, програмне забезпечення, Україна</h3>
+          <span class="tag">b2b</span>
+        </div>
+        <p class="case-what">Переробив семантичне ядро, розширив мінус-слова і крос-мінусування,
+          підняв якість оголошень, перерозподілив бюджети за конверсійністю.</p>
+        <div class="mrow"><span class="mrow-l">кліки</span><span class="mrow-v v-up">+157%</span></div>
+        <div class="mrow"><span class="mrow-l">ціна кліка</span><span class="mrow-v v-up">-55%</span></div>
+        <div class="mrow"><span class="mrow-l">CTR у пошуку</span><span class="mrow-v v-up">+28%</span></div>
+        <div class="mrow"><span class="mrow-l">бюджет</span><span class="mrow-v v-flat">+15%</span></div>
+      </article>
+
+      <article class="case">
+        <div class="case-top">
+          <h3>Інтернет-магазин, парфумерія, Україна</h3>
+          <span class="tag">e-commerce</span>
+        </div>
+        <p class="case-what">Зупинив неконверсійні кампанії й перекинув бюджет на робочі, оновив
+          об'єкти й відео в Performance Max, налаштував цільову ціну конверсії.</p>
+        <div class="mrow"><span class="mrow-l">ROAS</span><span class="mrow-v v-up">227%</span></div>
+        <div class="mrow"><span class="mrow-l">замовлення за місяць</span><span class="mrow-v v-flat">104</span></div>
+        <div class="mrow"><span class="mrow-l">ціна конверсії</span><span class="mrow-v v-up">-10%</span></div>
+      </article>
+
+      <div class="grid g2" style="margin-top:22px">
+        <blockquote class="quote">
+          <p>«Після чистки нецільового трафіку та доопрацювання списку мінус-слів вартість заявки
+             знизилася майже вдвічі, а кількість якісних звернень помітно зросла.»</p>
+          <cite>власник будівельної компанії</cite>
+        </blockquote>
+        <blockquote class="quote">
+          <p>«Конкурентна ніша, де багато реклами зливається на випадкові кліки. Кампанії
+             переналаштовані на реальні продажі, а не на трафік заради трафіку.»</p>
+          <cite>власник інтернет-магазину</cite>
+        </blockquote>
+      </div>
+
+      <p style="margin:18px 0 0;font-size:11.5px;color:var(--ink-3);line-height:1.6">
+        Назви компаній і рекламні бюджети не розкриваються за умовами співпраці.
+        Цифри взяті з місячних звітів Google Ads і Google Analytics 4 відповідних акаунтів.
+      </p>
+    </div>
+  </section>
+
+  <!-- МЕТОД -->
+  <section class="sec" id="method">
+    <div class="wrap">
+      <h2 class="sec-h">Метод</h2>
+      <p class="sec-sub">рутина на скриптах, рішення за людиною</p>
+      <div class="grid g2">
+        <div class="card">
+          <h3>Аудит за 53 перевірками</h3>
+          <p>Структура, семантика, оголошення, мінус-слова, гео, налаштування, конверсії.
+             Проганяється скриптом, читається людиною. Два дні замість двох тижнів.</p>
+        </div>
+        <div class="card">
+          <h3>Прогноз на реальних даних</h3>
+          <p>Скільки коштує клік саме у вашій ніші й вашому місті, з Keyword Planner,
+             а не «в середньому по ринку». До того, як ви витратите першу гривню.</p>
+        </div>
+        <div class="card">
+          <h3>Кожен запит прочитаний</h3>
+          <p>Щодня, автоматично. Нерелевантні йдуть у мінус-слова, спірні виносяться
+             на рішення. Нічого не вимикається наосліп.</p>
+        </div>
+        <div class="card">
+          <h3>Свої інструменти, а не чужий сервіс</h3>
+          <p>Пишу на Python і Google Ads API під конкретні задачі своїх акаунтів.
+             Не плачу за підписки і не залежу від чужих обмежень.</p>
+        </div>
+      </div>
+
+      <ul class="pr" style="margin-top:26px">
+        <li><b>01</b><span>Невеликий пул клієнтів: кожен акаунт веду особисто.</span></li>
+        <li><b>02</b><span>Щомісячний звіт зрозумілою мовою: що зроблено, що змінилось, що далі.</span></li>
+        <li><b>03</b><span>Ваш акаунт лишається вашим: кампанії будую у вашому кабінеті.</span></li>
+        <li><b>04</b><span>Не обіцяю цифри наперед. Обіцяю прозорість і те, що нічого не робиться наосліп.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ЧОМУ API -->
+  <section class="sec" id="api">
+    <div class="wrap">
+      <h2 class="sec-h">Маркетингова автоматизація та API</h2>
+      <p class="sec-sub">обробка даних і побудова утиліт</p>
+      <p style="margin:0;font-size:14px;color:var(--ink-2);max-width:64ch">
+        Я використовую <strong style="color:var(--ink)">Google Ads API</strong> для автоматизації звітів
+        і побудови власних модулів аналітики. Це дозволяє отримати доступ до щоденної статистики
+        напряму і створювати зведені звіти без ручних помилок для клієнтських акаунтів.
+      </p>
+
+      <div class="api-note">
+        <span class="badge"><i></i>Для Google API Audit Team / Developer Token Review</span>
+        <p>
+          Цей веб-ресурс є офіційним сайтом-портфоліо незалежного спеціаліста з маркетингу.
+          Я подаю запит на отримання <strong>Developer Token</strong> для розробки внутрішнього
+          застосунку (<strong>Internal Tool</strong>), який працює з рекламними акаунтами під
+          керуванням мого MCC-акаунта: моїми власними та акаунтами клієнтів, які надали мені доступ.
+        </p>
+        <ul>
+          <li><strong>Звітність:</strong> автоматичне вивантаження щоденних метрик (покази, кліки,
+              конверсії, пошукові запити) та побудова зведених звітів для клієнтів.</li>
+          <li><strong>Керування кампаніями:</strong> створення й редагування кампаній, груп оголошень,
+              ключових слів, мінус-слів та адаптивних пошукових оголошень.</li>
+          <li><strong>Дослідження та прогнози:</strong> збір семантики й побудова медіапланів через
+              Keyword Planner (KeywordPlanIdeaService / GenerateKeywordForecastMetrics).</li>
+          <li><strong>Обмеження доступу:</strong> ПЗ використовується виключно мною та безпосередніми
+              клієнтами, яким я надаю послуги. Доступ третім особам заборонено; дані клієнтів
+              не передаються й не перепродаються.</li>
+          <li><strong>Безпека:</strong> дані обробляються згідно з Google Ads API Terms &amp; Conditions
+              та Limited Use Requirements.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТИ -->
+  <section class="sec" id="contacts">
+    <div class="wrap">
+      <h2 class="sec-h">Контакти</h2>
+      <p class="sec-sub">напишіть для консультації або замовлення</p>
+      <div class="contact">
+        <div class="contact-top">
+          <div>
+            <span class="lbl">Офіційний email</span>
+            <span class="mail">tymofii@sepityi.com</span>
+          </div>
+          <a class="btn" href="mailto:tymofii@sepityi.com">Надіслати листа</a>
+        </div>
+        <div class="contact-grid">
+          <div>
+            <span class="lbl">Телефон</span>
+            <p class="mono">+380 96 276 5144</p>
+          </div>
+          <div>
+            <span class="lbl">Адреса</span>
+            <p>вул. Івана Дзюби, Київ, Україна</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p>© 2026 Сепітий Тимофій Ігорович. Всі права захищено.</p>
+      <p class="fine">Незалежний спеціаліст з Google Ads (self-employed) · Київ, Україна ·
+         tymofii@sepityi.com · +380 96 276 5144</p>
+    </div>
+    <div class="legal">
+      <button type="button" onclick="toggleModal('privacy')">Privacy Policy</button>
+      <button type="button" onclick="toggleModal('terms')">Terms of Service</button>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="modal-privacy">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="Privacy Policy">
+    <div class="modal-top">
+      <h4>Privacy Policy</h4>
+      <button type="button" onclick="toggleModal('privacy')">Закрити</button>
+    </div>
+    <p class="h">1. Захист даних</p>
+    <p>Ми збираємо виключно добровільно надані контактні дані зацікавлених замовників (Email) для комунікації.</p>
+    <p class="h">2. Google Ads API та конфіденційність</p>
+    <p>Будь-які маркетингові дані, отримані з Google Ads API, використовуються виключно для потреб
+       автоматизації звітності відповідних клієнтів (Limited Use Requirements).</p>
+  </div>
+</div>
+
+<div class="modal" id="modal-terms">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="Terms of Service">
+    <div class="modal-top">
+      <h4>Terms of Service</h4>
+      <button type="button" onclick="toggleModal('terms')">Закрити</button>
+    </div>
+    <p class="h">1. Опис сервісу</p>
+    <p>Тимофій Сепітий надає послуги супроводу контекстної реклами та програмування автоматичних
+       звітів за допомогою Google Ads API.</p>
+    <p class="h">2. Права інтелектуальної власності</p>
+    <p>Всі розроблені скрипти звітування є комерційними розробками та недоступні публічно
+       без додаткового погодження сторін.</p>
+  </div>
+</div>
+
+<script>
+function toggleModal(id){
+  document.getElementById('modal-' + id).classList.toggle('open');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    document.querySelectorAll('.modal.open').forEach(function(m){ m.classList.remove('open'); });
+  }
+});
+document.querySelectorAll('.modal').forEach(function(m){
+  m.addEventListener('click', function(e){ if(e.target === m) m.classList.remove('open'); });
+});
+</script>
+
 </body>
 </html>
