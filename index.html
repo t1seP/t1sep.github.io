@@ -5,202 +5,216 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Тимофій Сепітий | Google Ads & Маркетингові Технології</title>
 <meta name="description" content="Незалежний спеціаліст з Google Ads у Києві. Аудити акаунтів, прогнози бюджету на реальних даних, запуск і ведення пошукових, Performance Max і торгових кампаній.">
-<meta name="theme-color" content="#0C0E12">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230C0E12'/%3E%3Crect x='6' y='20' width='4' height='6' rx='1' fill='%237BA6FF'/%3E%3Crect x='14' y='14' width='4' height='12' rx='1' fill='%237BA6FF'/%3E%3Crect x='22' y='7' width='4' height='19' rx='1' fill='%234ED6A8'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0C10'/%3E%3Crect x='6' y='20' width='4' height='6' rx='2' fill='%23566173'/%3E%3Crect x='14' y='14' width='4' height='12' rx='2' fill='%23566173'/%3E%3Crect x='22' y='7' width='4' height='19' rx='2' fill='%233DDC97'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0C0E12;
-  --surface:#14171D;
-  --surface-2:#191D25;
-  --line:#252A34;
-  --line-soft:#1D222A;
-  --ink:#E7EAF0;
-  --ink-2:#98A1B2;
-  --ink-3:#5F6979;
-  --accent:#7BA6FF;      /* ідентичність, посилання */
-  --up:#4ED6A8;          /* показник покращився */
-  --down:#E0908C;        /* виключено, відсіяно */
-  --radius:6px;
-  --maxw:840px;
+  --bg:#0A0C10;
+  --card:#161A21;
+  --card-2:#1D222B;
+  --line:#2A303B;
+  --line-2:#222831;
+  --ink:#FFFFFF;
+  --ink-2:#C4CBD8;
+  --ink-3:#8B94A5;
+  --mint:#3DDC97;
+  --mint-dim:rgba(61,220,151,.12);
+  --r:16px;
+  --r-sm:10px;
+  --maxw:880px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  margin:0;background:var(--bg);color:var(--ink);
-  font-family:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
-  font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  margin:0;background:var(--bg);color:var(--ink-2);
+  font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-a{color:var(--accent);text-decoration:none}
+/* кольоровий момент: одна пляма світла зверху */
+body::before{
+  content:'';position:absolute;top:-380px;left:50%;transform:translateX(-50%);
+  width:1100px;height:700px;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse at center,rgba(61,220,151,.14),rgba(61,220,151,0) 62%);
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;position:relative;z-index:1}
+a{color:var(--mint);text-decoration:none}
 a:hover{text-decoration:underline}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+:focus-visible{outline:2px solid var(--mint);outline-offset:3px;border-radius:4px}
+strong{color:var(--ink);font-weight:700}
 
 /* ── шапка ─────────────────────────────────── */
-.head{position:sticky;top:0;z-index:50;background:rgba(12,14,18,.88);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft)}
+.head{position:sticky;top:0;z-index:50;background:rgba(10,12,16,.9);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line-2)}
 .head .wrap{display:flex;align-items:center;justify-content:space-between;
-  gap:16px;padding-top:16px;padding-bottom:16px}
-.mark{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ink);font-weight:500}
-.mark span{color:var(--ink-3)}
-.nav{display:flex;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;
-  letter-spacing:.06em;flex-wrap:wrap}
-.nav a{color:var(--ink-2)}
+  gap:16px;padding-top:15px;padding-bottom:15px}
+.brand{font-size:15px;font-weight:700;color:var(--ink)}
+.brand i{display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:var(--mint);margin-right:8px;vertical-align:middle;font-style:normal}
+.nav{display:flex;gap:22px;font-size:14.5px;font-weight:500;flex-wrap:wrap}
+.nav a{color:var(--ink-3)}
 .nav a:hover{color:var(--ink);text-decoration:none}
 
 /* ── секції ────────────────────────────────── */
-main{padding:56px 0 0}
-.sec{padding:64px 0;border-top:1px solid var(--line-soft);scroll-margin-top:84px}
-.sec:first-child{border-top:0;padding-top:8px}
-.sec-h{margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.02em}
-.sec-sub{margin:0 0 28px;font-family:'JetBrains Mono',monospace;font-size:11px;
-  color:var(--ink-3);letter-spacing:.06em}
+.sec{padding:66px 0;border-top:1px solid var(--line-2);scroll-margin-top:80px}
+.sec.first{border-top:0;padding-top:52px}
+.eyebrow{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--mint)}
+h2{margin:0 0 8px;font-size:27px;font-weight:800;color:var(--ink);
+  letter-spacing:-.02em;line-height:1.25}
+.sub{margin:0 0 30px;font-size:16px;color:var(--ink-3);max-width:60ch}
 
 /* ── герой ─────────────────────────────────── */
-.status{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;
-  font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);
-  border:1px solid var(--line);border-radius:999px;padding:5px 12px}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--up)}
-h1{font-family:'Unbounded',sans-serif;font-weight:700;letter-spacing:-.02em;
-  font-size:clamp(34px,7vw,54px);line-height:1.04;margin:22px 0 18px}
-.lede{font-size:17px;color:var(--ink);max-width:60ch;margin:0 0 14px}
-.lede-2{font-size:14.5px;color:var(--ink-2);max-width:62ch;margin:0 0 22px}
-.meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3);
-  letter-spacing:.08em;text-transform:uppercase;margin:0 0 30px}
+.badge{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;
+  color:var(--ink-2);background:var(--card);border:1px solid var(--line);
+  border-radius:999px;padding:7px 15px}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--mint);
+  box-shadow:0 0 0 4px var(--mint-dim);font-style:normal}
+h1{font-size:clamp(38px,7.5vw,60px);font-weight:800;color:var(--ink);
+  letter-spacing:-.035em;line-height:1.03;margin:22px 0 20px}
+.lede{font-size:19px;line-height:1.6;color:var(--ink-2);max-width:56ch;margin:0 0 16px}
+.lede-2{font-size:16px;color:var(--ink-3);max-width:60ch;margin:0 0 26px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
 
-/* ── панель-підпис: рядки даних ────────────── */
-.panel{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
-  overflow:hidden}
-.panel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:11px 16px;border-bottom:1px solid var(--line);background:var(--surface-2);
-  font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--ink-3)}
-.row{display:flex;align-items:center;justify-content:space-between;gap:16px;
-  padding:11px 16px;border-top:1px solid var(--line-soft);
-  font-family:'JetBrains Mono',monospace;font-size:12.5px}
-.row:first-of-type{border-top:0}
-.row-q{color:var(--ink-2);overflow-wrap:anywhere}
-.chip{font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;
-  border-radius:4px;white-space:nowrap;font-weight:500}
-.chip-keep{color:var(--up);background:rgba(78,214,168,.10);border:1px solid rgba(78,214,168,.28)}
-.chip-cut{color:var(--down);background:rgba(224,144,140,.09);border:1px solid rgba(224,144,140,.26)}
-.panel-foot{padding:11px 16px;border-top:1px solid var(--line);
-  font-size:11.5px;color:var(--ink-3);line-height:1.5}
+/* ── кнопки ────────────────────────────────── */
+.btn{display:inline-block;background:var(--mint);color:#06210F;font-weight:700;
+  font-size:15.5px;padding:13px 24px;border-radius:var(--r-sm);
+  transition:transform .15s ease,filter .15s ease}
+.btn:hover{filter:brightness(1.07);transform:translateY(-1px);text-decoration:none}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink-3);filter:none}
 
 /* ── картки ────────────────────────────────── */
-.grid{display:grid;gap:14px}
+.grid{display:grid;gap:16px}
 .g3{grid-template-columns:repeat(3,1fr)}
 .g2{grid-template-columns:repeat(2,1fr)}
-.card{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
-  padding:18px;transition:border-color .18s ease}
-.card:hover{border-color:#333A47}
-.card h3{margin:0 0 7px;font-size:13.5px;font-weight:600}
-.card p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.6}
-.tag{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:9px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:24px;transition:border-color .18s ease,transform .18s ease}
+.card:hover{border-color:#39404E;transform:translateY(-2px)}
+.card h3{margin:0 0 9px;font-size:17px;font-weight:700;color:var(--ink);line-height:1.35}
+.card p{margin:0;font-size:15px;color:var(--ink-3);line-height:1.6}
+.num{display:block;font-size:13px;font-weight:700;color:var(--mint);margin-bottom:12px}
 
-/* ── кейси: рядки звіту ────────────────────── */
-.case{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
-  margin-bottom:14px;overflow:hidden}
-.case-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
-  flex-wrap:wrap;padding:15px 18px;border-bottom:1px solid var(--line)}
-.case-top h3{margin:0;font-size:13.5px;font-weight:600}
-.case-top .tag{margin:0}
-.case-what{padding:13px 18px;font-size:12.5px;color:var(--ink-2);
-  border-bottom:1px solid var(--line-soft);line-height:1.6}
-.mrow{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;
-  padding:10px 18px;border-top:1px solid var(--line-soft);
-  font-family:'JetBrains Mono',monospace;font-size:12.5px}
-.mrow:first-of-type{border-top:0}
-.mrow-l{color:var(--ink-2)}
-.mrow-v{font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
-.v-up{color:var(--up)}
-.v-flat{color:var(--ink-2)}
+/* ── панель пошукових запитів ──────────────── */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;box-shadow:0 20px 50px -25px rgba(0,0,0,.9)}
+.panel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:15px 22px;border-bottom:1px solid var(--line);background:var(--card-2);
+  font-size:14px;font-weight:600;color:var(--ink)}
+.panel-top span:last-child{font-size:12px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3)}
+.q{display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:14px 22px;border-top:1px solid var(--line-2);font-size:15.5px;color:var(--ink-2)}
+.q:first-of-type{border-top:0}
+.chip{font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:99px;white-space:nowrap}
+.keep{color:#0A2A1C;background:var(--mint)}
+.cut{color:var(--ink-3);background:#232833;border:1px solid var(--line)}
+.panel-foot{padding:16px 22px;border-top:1px solid var(--line);background:var(--card-2);
+  font-size:14.5px;color:var(--ink-3);line-height:1.6}
+
+/* ── кейси ─────────────────────────────────── */
+.case{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px;margin-bottom:18px}
+.case-head{display:flex;align-items:flex-start;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.case-head h3{margin:0;font-size:19px;font-weight:700;color:var(--ink);line-height:1.3}
+.case-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);background:var(--card-2);border:1px solid var(--line);
+  padding:5px 11px;border-radius:99px;white-space:nowrap}
+.case-what{margin:0 0 20px;font-size:15px;color:var(--ink-3);line-height:1.6}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:var(--card-2);border:1px solid var(--line-2);border-radius:var(--r-sm);
+  padding:15px 16px}
+.stat b{display:block;font-size:27px;font-weight:800;color:var(--mint);
+  letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat b.flat{color:var(--ink)}
+.stat span{display:block;font-size:13.5px;color:var(--ink-3);margin-top:5px;line-height:1.35}
 
 /* ── цитати ────────────────────────────────── */
-.quote{border:1px solid var(--line);border-left:2px solid var(--line);
-  border-radius:var(--radius);background:var(--surface);padding:18px}
-.quote p{margin:0 0 10px;font-size:13px;color:var(--ink-2);line-height:1.65}
-.quote cite{font-family:'JetBrains Mono',monospace;font-size:10px;font-style:normal;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:24px}
+.quote p{margin:0 0 14px;font-size:16px;color:var(--ink-2);line-height:1.6}
+.quote cite{font-size:13.5px;font-style:normal;color:var(--ink-3);font-weight:600}
 
-/* ── список принципів ──────────────────────── */
-.pr{list-style:none;margin:0;padding:0;display:grid;gap:11px;grid-template-columns:repeat(2,1fr)}
-.pr li{display:flex;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.6}
-.pr b{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3);
-  flex:none;padding-top:3px}
+/* ── принципи ──────────────────────────────── */
+.pr{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px;
+  grid-template-columns:repeat(2,1fr)}
+.pr li{display:flex;gap:12px;font-size:15.5px;color:var(--ink-2);line-height:1.55}
+.pr i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--mint-dim);
+  color:var(--mint);font-style:normal;font-size:13px;font-weight:800;
+  display:grid;place-items:center;margin-top:2px}
 
 /* ── блок для рев'ю Google ─────────────────── */
-.api-note{border:1px solid var(--line);border-radius:var(--radius);
-  background:var(--surface-2);padding:18px;margin-top:14px}
-.api-note .badge{display:inline-flex;align-items:center;gap:7px;
-  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--accent);margin-bottom:11px}
-.api-note .badge i{width:6px;height:6px;border-radius:50%;background:var(--accent);display:block}
-.api-note p{margin:0 0 10px;font-size:12.5px;color:var(--ink-2);line-height:1.65}
-.api-note ul{margin:0;padding-left:17px;font-size:12px;color:var(--ink-3);line-height:1.7}
-.api-note strong{color:var(--ink-2);font-weight:600}
+.api{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.api > p{margin:0 0 20px;font-size:16px;color:var(--ink-2);line-height:1.6}
+.api-note{background:var(--card-2);border:1px solid var(--line-2);border-radius:var(--r-sm);
+  padding:20px}
+.api-note .lab{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--mint);margin-bottom:12px}
+.api-note .lab i{width:6px;height:6px;border-radius:50%;background:var(--mint);font-style:normal}
+.api-note p{margin:0 0 12px;font-size:14.5px;color:var(--ink-3);line-height:1.65}
+.api-note ul{margin:0;padding-left:19px;font-size:14px;color:var(--ink-3);line-height:1.7}
+.api-note li{margin-bottom:5px}
 
 /* ── контакти ──────────────────────────────── */
-.contact{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
-  padding:20px}
-.contact-top{display:flex;align-items:center;justify-content:space-between;gap:16px;
-  flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line-soft)}
-.lbl{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
-.mail{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:500;
-  color:var(--ink);user-select:all}
-.btn{display:inline-block;background:var(--accent);color:#0B0E14;font-weight:600;
-  font-size:13px;padding:10px 18px;border-radius:var(--radius);
-  transition:filter .18s ease;white-space:nowrap}
-.btn:hover{filter:brightness(1.1);text-decoration:none}
-.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding-top:16px}
-.contact-grid p{margin:0;font-size:13.5px;color:var(--ink)}
-.contact-grid .mono{font-family:'JetBrains Mono',monospace;user-select:all}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.contact-top{display:flex;align-items:center;justify-content:space-between;gap:18px;
+  flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--line-2)}
+.lab-s{display:block;font-size:12.5px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.mail{font-size:21px;font-weight:700;color:var(--ink);user-select:all;word-break:break-all}
+.cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding-top:20px}
+.cgrid p{margin:0;font-size:16px;color:var(--ink);font-weight:500}
 
 /* ── підвал ────────────────────────────────── */
-footer{border-top:1px solid var(--line-soft);margin-top:64px;padding:28px 0 36px;
-  background:#0A0C10}
-footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
-footer p{margin:0 0 4px;font-size:12px;color:var(--ink-2)}
-footer .fine{font-size:11px;color:var(--ink-3);line-height:1.6}
-.legal{display:flex;gap:16px;font-family:'JetBrains Mono',monospace;font-size:11px}
-.legal button{background:none;border:0;color:var(--ink-2);cursor:pointer;
-  text-decoration:underline;font:inherit;padding:0}
+footer{border-top:1px solid var(--line-2);margin-top:70px;padding:30px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p{margin:0 0 5px;font-size:14px;color:var(--ink-3)}
+footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
+.legal{display:flex;gap:18px;font-size:14px}
+.legal button{background:none;border:0;color:var(--ink-3);cursor:pointer;
+  font:inherit;text-decoration:underline;padding:0}
 .legal button:hover{color:var(--ink)}
 
 /* ── модалки ───────────────────────────────── */
-.modal{position:fixed;inset:0;z-index:100;background:rgba(6,8,11,.72);
-  backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(5,7,10,.8);
+  backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px}
 .modal.open{display:flex}
-.modal-box{background:var(--surface);border:1px solid var(--line);border-radius:8px;
-  max-width:520px;width:100%;max-height:78vh;overflow-y:auto;padding:22px}
-.modal-top{display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding-bottom:12px;border-bottom:1px solid var(--line-soft);margin-bottom:14px}
-.modal-top h4{margin:0;font-size:13.5px;font-weight:600}
-.modal-top button{background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2);
-  font:inherit;font-size:11px;padding:4px 10px;border-radius:4px;cursor:pointer}
-.modal-box p{margin:0 0 9px;font-size:12.5px;color:var(--ink-2);line-height:1.65}
-.modal-box p.h{color:var(--ink);font-weight:600;margin-top:14px}
+.modal-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  max-width:540px;width:100%;max-height:80vh;overflow-y:auto;padding:26px}
+.modal-top{display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding-bottom:14px;border-bottom:1px solid var(--line-2);margin-bottom:16px}
+.modal-top h4{margin:0;font-size:18px;font-weight:700;color:var(--ink)}
+.modal-top button{background:var(--card-2);border:1px solid var(--line);color:var(--ink-2);
+  font:inherit;font-size:13.5px;padding:6px 13px;border-radius:8px;cursor:pointer}
+.modal-box p{margin:0 0 10px;font-size:14.5px;color:var(--ink-3);line-height:1.65}
+.modal-box p.h{color:var(--ink);font-weight:700;margin-top:16px}
 
 /* ── поява ─────────────────────────────────── */
-.rise{opacity:0;transform:translateY(8px);animation:rise .5s cubic-bezier(.2,.7,.3,1) forwards}
+.rise{opacity:0;transform:translateY(10px);animation:rise .55s cubic-bezier(.2,.7,.3,1) forwards}
 @keyframes rise{to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){
   .rise{animation:none;opacity:1;transform:none}
   html{scroll-behavior:auto}
+  .card:hover,.btn:hover{transform:none}
 }
 
 /* ── адаптив ───────────────────────────────── */
-@media (max-width:720px){
-  .g3,.g2,.pr,.contact-grid{grid-template-columns:1fr}
-  .head .wrap{flex-direction:column;align-items:flex-start;gap:10px}
-  .nav{gap:14px}
-  .sec{padding:48px 0}
-  .row{flex-direction:column;align-items:flex-start;gap:7px}
+@media (max-width:820px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:700px){
+  body{font-size:15.5px}
+  .g3,.g2,.pr,.cgrid{grid-template-columns:1fr}
+  .head .wrap{flex-direction:column;align-items:flex-start;gap:11px}
+  .nav{gap:16px;font-size:14px}
+  .sec{padding:50px 0}
+  .q{flex-direction:column;align-items:flex-start;gap:9px}
+  .case,.card,.api,.contact,.quote{padding:20px}
+  h2{font-size:24px}
 }
 </style>
 </head>
@@ -208,11 +222,10 @@ footer .fine{font-size:11px;color:var(--ink-3);line-height:1.6}
 
 <header class="head">
   <div class="wrap">
-    <div class="mark">sepityi <span>// google ads</span></div>
+    <div class="brand"><i></i>Тимофій Сепітий</div>
     <nav class="nav">
-      <a href="#about">Про мене</a>
-      <a href="#services">Послуги</a>
       <a href="#cases">Кейси</a>
+      <a href="#services">Послуги</a>
       <a href="#method">Метод</a>
       <a href="#api">Чому API</a>
       <a href="#contacts">Контакти</a>
@@ -223,63 +236,36 @@ footer .fine{font-size:11px;color:var(--ink-3);line-height:1.6}
 <main>
 
   <!-- ГЕРОЙ -->
-  <section class="sec" id="about">
+  <section class="sec first" id="about">
     <div class="wrap">
-      <div class="status rise"><span class="dot"></span>PPC Specialist / Developer</div>
-      <h1 class="rise" style="animation-delay:.05s">Тимофій<br>Сепітий</h1>
+      <div class="badge rise"><i></i>Google Ads · Київ</div>
+      <h1 class="rise" style="animation-delay:.05s">Реклама, яка<br>не зливає бюджет</h1>
       <p class="lede rise" style="animation-delay:.1s">
-        Веду контекстну рекламу в <strong>Google Ads</strong> для сервісного бізнесу та інтернет-магазинів.
-        Налаштовую аналітику, підключаю відстеження конверсій і будую регулярне звітування
-        через <strong>Google Ads API</strong>.
+        Веду Google Ads для сервісного бізнесу та інтернет-магазинів. Пошук, Performance Max,
+        торгові кампанії: від аудиту й запуску до щомісячної звітності.
       </p>
       <p class="lede-2 rise" style="animation-delay:.14s">
-        Пошукові кампанії, Performance Max, торгові: від аудиту й запуску до оптимізації
-        та щомісячної звітності.
+        Рутину роблять мої скрипти на Google Ads API. Рішення лишаються за мною.
       </p>
-      <p class="meta rise" style="animation-delay:.18s">Київ · Україна / Канада / США · Search · PMax · Shopping</p>
+      <div class="hero-cta rise" style="animation-delay:.18s">
+        <a class="btn" href="#contacts">Безкоштовний аудит акаунту</a>
+        <a class="btn btn-ghost" href="#cases">Подивитись кейси</a>
+      </div>
 
-      <!-- підпис сторінки: як виглядає щоденна чистка запитів -->
       <div class="panel rise" style="animation-delay:.24s">
         <div class="panel-top">
-          <span>Пошукові запити · щоденна перевірка</span>
+          <span>Що я роблю щодня</span>
           <span>приклад</span>
         </div>
-        <div class="row"><span class="row-q">монтаж опалення львів ціна</span><span class="chip chip-keep">лишити</span></div>
-        <div class="row"><span class="row-q">монтаж опалення своїми руками</span><span class="chip chip-cut">виключити</span></div>
-        <div class="row"><span class="row-q">встановлення газового котла львів</span><span class="chip chip-keep">лишити</span></div>
-        <div class="row"><span class="row-q">схема опалення креслення безкоштовно</span><span class="chip chip-cut">виключити</span></div>
-        <div class="row"><span class="row-q">монтажник опалення вакансія</span><span class="chip chip-cut">виключити</span></div>
+        <div class="q"><span>монтаж опалення київ ціна</span><span class="chip keep">лишити</span></div>
+        <div class="q"><span>монтаж опалення своїми руками</span><span class="chip cut">виключити</span></div>
+        <div class="q"><span>встановлення газового котла київ</span><span class="chip keep">лишити</span></div>
+        <div class="q"><span>схема опалення креслення безкоштовно</span><span class="chip cut">виключити</span></div>
+        <div class="q"><span>монтажник опалення вакансія</span><span class="chip cut">виключити</span></div>
         <div class="panel-foot">
-          Саме тут зазвичай і витікає бюджет. Прочитати тисячі запитів щотижня руками неможливо,
-          тому їх ніхто не читає. У мене це робить скрипт щодня, а спірні випадки виносить мені на рішення.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ПОСЛУГИ -->
-  <section class="sec" id="services">
-    <div class="wrap">
-      <h2 class="sec-h">Послуги</h2>
-      <p class="sec-sub">напрямки роботи</p>
-      <div class="grid g3">
-        <div class="card">
-          <span class="tag">Управління</span>
-          <h3>Ведення Google Ads</h3>
-          <p>Повний цикл: збір семантики, структура кампаній, оголошення, ставки, ведення
-             Performance Max і торгових кампаній.</p>
-        </div>
-        <div class="card">
-          <span class="tag">Діагностика</span>
-          <h3>Аудит акаунту</h3>
-          <p>Перевірка акаунту за 53 пунктами: структура, семантика, оголошення, мінус-слова,
-             гео, налаштування, конверсії. Пріоритезований список правок.</p>
-        </div>
-        <div class="card">
-          <span class="tag">Аналітика</span>
-          <h3>Налаштування конверсій</h3>
-          <p>Google Analytics 4 через Google Tag Manager, трекінг форм, кнопок і дзвінків.
-             Без цього ставки нема на чому вчити.</p>
+          Кожен запит, за яким показалась ваша реклама, треба прочитати і вирішити, чи він вам
+          потрібен. Тисячі запитів на тиждень руками не читає ніхто, тому саме тут витікає бюджет.
+          У мене це робить скрипт щодня, а спірні випадки виносить мені на рішення.
         </div>
       </div>
     </div>
@@ -288,48 +274,57 @@ footer .fine{font-size:11px;color:var(--ink-3);line-height:1.6}
   <!-- КЕЙСИ -->
   <section class="sec" id="cases">
     <div class="wrap">
-      <h2 class="sec-h">Кейси</h2>
-      <p class="sec-sub">зміни за місяць роботи в акаунті</p>
+      <p class="eyebrow">Кейси</p>
+      <h2>Що змінюється за перший місяць</h2>
+      <p class="sub">Цифри з місячних звітів Google Ads і Google Analytics 4. Назви компаній
+        і бюджети не розкриваю за умовами співпраці.</p>
 
       <article class="case">
-        <div class="case-top">
+        <div class="case-head">
           <h3>Покрівельні роботи, Північна Америка</h3>
-          <span class="tag">послуги</span>
+          <span class="case-tag">послуги</span>
         </div>
         <p class="case-what">Перебудував структуру кампаній під сезонність попиту, вичистив
           нецільовий трафік, перевів кампанії на цільову ціну конверсії.</p>
-        <div class="mrow"><span class="mrow-l">заявки</span><span class="mrow-v v-up">+70%</span></div>
-        <div class="mrow"><span class="mrow-l">ціна заявки</span><span class="mrow-v v-up">-42%</span></div>
-        <div class="mrow"><span class="mrow-l">CTR у пошуку</span><span class="mrow-v v-up">+37%</span></div>
-        <div class="mrow"><span class="mrow-l">витрати</span><span class="mrow-v v-flat">без змін</span></div>
+        <div class="stats">
+          <div class="stat"><b>+70%</b><span>заявок</span></div>
+          <div class="stat"><b>-42%</b><span>ціна заявки</span></div>
+          <div class="stat"><b>+37%</b><span>CTR у пошуку</span></div>
+          <div class="stat"><b class="flat">0%</b><span>зміна бюджету</span></div>
+        </div>
       </article>
 
       <article class="case">
-        <div class="case-top">
+        <div class="case-head">
           <h3>B2B, програмне забезпечення, Україна</h3>
-          <span class="tag">b2b</span>
+          <span class="case-tag">b2b</span>
         </div>
         <p class="case-what">Переробив семантичне ядро, розширив мінус-слова і крос-мінусування,
           підняв якість оголошень, перерозподілив бюджети за конверсійністю.</p>
-        <div class="mrow"><span class="mrow-l">кліки</span><span class="mrow-v v-up">+157%</span></div>
-        <div class="mrow"><span class="mrow-l">ціна кліка</span><span class="mrow-v v-up">-55%</span></div>
-        <div class="mrow"><span class="mrow-l">CTR у пошуку</span><span class="mrow-v v-up">+28%</span></div>
-        <div class="mrow"><span class="mrow-l">бюджет</span><span class="mrow-v v-flat">+15%</span></div>
+        <div class="stats">
+          <div class="stat"><b>+157%</b><span>кліків</span></div>
+          <div class="stat"><b>-55%</b><span>ціна кліка</span></div>
+          <div class="stat"><b>+28%</b><span>CTR у пошуку</span></div>
+          <div class="stat"><b class="flat">+15%</b><span>зміна бюджету</span></div>
+        </div>
       </article>
 
       <article class="case">
-        <div class="case-top">
+        <div class="case-head">
           <h3>Інтернет-магазин, парфумерія, Україна</h3>
-          <span class="tag">e-commerce</span>
+          <span class="case-tag">e-commerce</span>
         </div>
         <p class="case-what">Зупинив неконверсійні кампанії й перекинув бюджет на робочі, оновив
           об'єкти й відео в Performance Max, налаштував цільову ціну конверсії.</p>
-        <div class="mrow"><span class="mrow-l">ROAS</span><span class="mrow-v v-up">227%</span></div>
-        <div class="mrow"><span class="mrow-l">замовлення за місяць</span><span class="mrow-v v-flat">104</span></div>
-        <div class="mrow"><span class="mrow-l">ціна конверсії</span><span class="mrow-v v-up">-10%</span></div>
+        <div class="stats">
+          <div class="stat"><b>227%</b><span>ROAS</span></div>
+          <div class="stat"><b>-10%</b><span>ціна конверсії</span></div>
+          <div class="stat"><b class="flat">104</b><span>замовлення за місяць</span></div>
+          <div class="stat"><b class="flat">+23%</b><span>конверсій</span></div>
+        </div>
       </article>
 
-      <div class="grid g2" style="margin-top:22px">
+      <div class="grid g2" style="margin-top:26px">
         <blockquote class="quote">
           <p>«Після чистки нецільового трафіку та доопрацювання списку мінус-слів вартість заявки
              знизилася майже вдвічі, а кількість якісних звернень помітно зросла.»</p>
@@ -341,83 +336,106 @@ footer .fine{font-size:11px;color:var(--ink-3);line-height:1.6}
           <cite>власник інтернет-магазину</cite>
         </blockquote>
       </div>
+    </div>
+  </section>
 
-      <p style="margin:18px 0 0;font-size:11.5px;color:var(--ink-3);line-height:1.6">
-        Назви компаній і рекламні бюджети не розкриваються за умовами співпраці.
-        Цифри взяті з місячних звітів Google Ads і Google Analytics 4 відповідних акаунтів.
-      </p>
+  <!-- ПОСЛУГИ -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <p class="eyebrow">Послуги</p>
+      <h2>З чого зазвичай починаємо</h2>
+      <p class="sub">Більшість приходить за аудитом або прогнозом, далі вирішує, що робити далі.</p>
+      <div class="grid g3">
+        <div class="card">
+          <span class="num">01</span>
+          <h3>Аудит акаунту</h3>
+          <p>Перевірка за 53 пунктами: структура, семантика, оголошення, мінус-слова, гео,
+             налаштування, конверсії. На виході список правок за пріоритетом.</p>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3>Прогноз бюджету</h3>
+          <p>Скільки людей шукає вашу послугу, скільки коштує клік і скільки заявок реально
+             отримати. До того, як ви витратите першу гривню.</p>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3>Запуск і ведення</h3>
+          <p>Збір семантики, структура, оголошення, налаштування конверсій через GA4 і GTM,
+             далі щоденна оптимізація і звіт раз на місяць.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- МЕТОД -->
   <section class="sec" id="method">
     <div class="wrap">
-      <h2 class="sec-h">Метод</h2>
-      <p class="sec-sub">рутина на скриптах, рішення за людиною</p>
+      <p class="eyebrow">Метод</p>
+      <h2>Рутина на скриптах, рішення за людиною</h2>
+      <p class="sub">Те, що більшість робить руками або не робить взагалі, у мене працює саме.</p>
       <div class="grid g2">
         <div class="card">
           <h3>Аудит за 53 перевірками</h3>
-          <p>Структура, семантика, оголошення, мінус-слова, гео, налаштування, конверсії.
-             Проганяється скриптом, читається людиною. Два дні замість двох тижнів.</p>
+          <p>Проганяється скриптом, читається людиною. Два дні замість двох тижнів,
+             і жоден пункт не забувається.</p>
         </div>
         <div class="card">
           <h3>Прогноз на реальних даних</h3>
           <p>Скільки коштує клік саме у вашій ніші й вашому місті, з Keyword Planner,
-             а не «в середньому по ринку». До того, як ви витратите першу гривню.</p>
+             а не «в середньому по ринку».</p>
         </div>
         <div class="card">
           <h3>Кожен запит прочитаний</h3>
           <p>Щодня, автоматично. Нерелевантні йдуть у мінус-слова, спірні виносяться
-             на рішення. Нічого не вимикається наосліп.</p>
+             на рішення. Наосліп не вимикається нічого.</p>
         </div>
         <div class="card">
-          <h3>Свої інструменти, а не чужий сервіс</h3>
+          <h3>Свої інструменти</h3>
           <p>Пишу на Python і Google Ads API під конкретні задачі своїх акаунтів.
              Не плачу за підписки і не залежу від чужих обмежень.</p>
         </div>
       </div>
 
-      <ul class="pr" style="margin-top:26px">
-        <li><b>01</b><span>Невеликий пул клієнтів: кожен акаунт веду особисто.</span></li>
-        <li><b>02</b><span>Щомісячний звіт зрозумілою мовою: що зроблено, що змінилось, що далі.</span></li>
-        <li><b>03</b><span>Ваш акаунт лишається вашим: кампанії будую у вашому кабінеті.</span></li>
-        <li><b>04</b><span>Не обіцяю цифри наперед. Обіцяю прозорість і те, що нічого не робиться наосліп.</span></li>
+      <ul class="pr">
+        <li><i>1</i><span>Невеликий пул клієнтів: кожен акаунт веду особисто.</span></li>
+        <li><i>2</i><span>Звіт раз на місяць людською мовою: що зроблено, що змінилось, що далі.</span></li>
+        <li><i>3</i><span>Ваш акаунт лишається вашим: кампанії будую у вашому кабінеті.</span></li>
+        <li><i>4</i><span>Не обіцяю цифри наперед. Обіцяю, що нічого не робиться наосліп.</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- ЧОМУ API -->
+  <!-- API -->
   <section class="sec" id="api">
     <div class="wrap">
-      <h2 class="sec-h">Маркетингова автоматизація та API</h2>
-      <p class="sec-sub">обробка даних і побудова утиліт</p>
-      <p style="margin:0;font-size:14px;color:var(--ink-2);max-width:64ch">
-        Я використовую <strong style="color:var(--ink)">Google Ads API</strong> для автоматизації звітів
-        і побудови власних модулів аналітики. Це дозволяє отримати доступ до щоденної статистики
-        напряму і створювати зведені звіти без ручних помилок для клієнтських акаунтів.
-      </p>
+      <p class="eyebrow">Чому API</p>
+      <h2>Маркетингова автоматизація</h2>
+      <div class="api">
+        <p>Я використовую <strong>Google Ads API</strong> для автоматизації звітів і побудови
+          власних модулів аналітики. Це дає доступ до щоденної статистики напряму і дозволяє
+          робити зведені звіти для клієнтів без ручних помилок.</p>
 
-      <div class="api-note">
-        <span class="badge"><i></i>Для Google API Audit Team / Developer Token Review</span>
-        <p>
-          Цей веб-ресурс є офіційним сайтом-портфоліо незалежного спеціаліста з маркетингу.
-          Я подаю запит на отримання <strong>Developer Token</strong> для розробки внутрішнього
-          застосунку (<strong>Internal Tool</strong>), який працює з рекламними акаунтами під
-          керуванням мого MCC-акаунта: моїми власними та акаунтами клієнтів, які надали мені доступ.
-        </p>
-        <ul>
-          <li><strong>Звітність:</strong> автоматичне вивантаження щоденних метрик (покази, кліки,
-              конверсії, пошукові запити) та побудова зведених звітів для клієнтів.</li>
-          <li><strong>Керування кампаніями:</strong> створення й редагування кампаній, груп оголошень,
-              ключових слів, мінус-слів та адаптивних пошукових оголошень.</li>
-          <li><strong>Дослідження та прогнози:</strong> збір семантики й побудова медіапланів через
-              Keyword Planner (KeywordPlanIdeaService / GenerateKeywordForecastMetrics).</li>
-          <li><strong>Обмеження доступу:</strong> ПЗ використовується виключно мною та безпосередніми
-              клієнтами, яким я надаю послуги. Доступ третім особам заборонено; дані клієнтів
-              не передаються й не перепродаються.</li>
-          <li><strong>Безпека:</strong> дані обробляються згідно з Google Ads API Terms &amp; Conditions
-              та Limited Use Requirements.</li>
-        </ul>
+        <div class="api-note">
+          <span class="lab"><i></i>Для Google API Audit Team / Developer Token Review</span>
+          <p>Цей веб-ресурс є офіційним сайтом-портфоліо незалежного спеціаліста з маркетингу.
+            Я подаю запит на отримання <strong>Developer Token</strong> для розробки внутрішнього
+            застосунку (<strong>Internal Tool</strong>), який працює з рекламними акаунтами під
+            керуванням мого MCC-акаунта: моїми власними та акаунтами клієнтів, які надали мені доступ.</p>
+          <ul>
+            <li><strong>Звітність:</strong> автоматичне вивантаження щоденних метрик (покази, кліки,
+                конверсії, пошукові запити) та побудова зведених звітів для клієнтів.</li>
+            <li><strong>Керування кампаніями:</strong> створення й редагування кампаній, груп оголошень,
+                ключових слів, мінус-слів та адаптивних пошукових оголошень.</li>
+            <li><strong>Дослідження та прогнози:</strong> збір семантики й побудова медіапланів через
+                Keyword Planner (KeywordPlanIdeaService / GenerateKeywordForecastMetrics).</li>
+            <li><strong>Обмеження доступу:</strong> ПЗ використовується виключно мною та безпосередніми
+                клієнтами, яким я надаю послуги. Доступ третім особам заборонено; дані клієнтів
+                не передаються й не перепродаються.</li>
+            <li><strong>Безпека:</strong> дані обробляються згідно з Google Ads API Terms &amp; Conditions
+                та Limited Use Requirements.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -425,23 +443,25 @@ footer .fine{font-size:11px;color:var(--ink-3);line-height:1.6}
   <!-- КОНТАКТИ -->
   <section class="sec" id="contacts">
     <div class="wrap">
-      <h2 class="sec-h">Контакти</h2>
-      <p class="sec-sub">напишіть для консультації або замовлення</p>
+      <p class="eyebrow">Контакти</p>
+      <h2>Напишіть, подивлюсь ваш акаунт</h2>
+      <p class="sub">Розкажіть коротко про бізнес і що зараз не влаштовує в рекламі.
+        Відповім і чесно скажу, чи можу бути корисним.</p>
       <div class="contact">
         <div class="contact-top">
           <div>
-            <span class="lbl">Офіційний email</span>
+            <span class="lab-s">Email</span>
             <span class="mail">tymofii@sepityi.com</span>
           </div>
           <a class="btn" href="mailto:tymofii@sepityi.com">Надіслати листа</a>
         </div>
-        <div class="contact-grid">
+        <div class="cgrid">
           <div>
-            <span class="lbl">Телефон</span>
-            <p class="mono">+380 96 276 5144</p>
+            <span class="lab-s">Телефон</span>
+            <p>+380 96 276 5144</p>
           </div>
           <div>
-            <span class="lbl">Адреса</span>
+            <span class="lab-s">Адреса</span>
             <p>вул. Івана Дзюби, Київ, Україна</p>
           </div>
         </div>
