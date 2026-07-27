@@ -131,6 +131,32 @@ footer p{margin:0;font-size:13px;color:#6C7688;line-height:1.6}
   main{padding:40px 0}
   .steps,.direct{padding:20px}
 }
+
+/* ── док: соцмережі + нагору ────────────────── */
+.dock{position:fixed;right:20px;bottom:20px;z-index:60;
+  display:flex;flex-direction:column;gap:10px;align-items:center}
+.dock-btn{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--card);border:1px solid var(--line);color:var(--ink-2);
+  cursor:pointer;padding:0;
+  box-shadow:0 8px 24px -10px rgba(0,0,0,.8);
+  transition:color .18s ease,border-color .18s ease,transform .18s ease,background .18s ease}
+.dock-btn:hover{color:#06210F;background:var(--mint);border-color:var(--mint);
+  transform:translateY(-2px);text-decoration:none}
+.dock-btn svg{width:20px;height:20px;display:block}
+.dock-sep{width:26px;height:1px;background:var(--line);margin:2px 0}
+.dock-top{opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .25s ease,visibility .25s ease,transform .25s ease,
+             color .18s ease,border-color .18s ease,background .18s ease}
+.dock-top.on{opacity:1;visibility:visible;transform:none}
+@media (max-width:620px){
+  .dock{right:14px;bottom:14px;gap:8px}
+  .dock-btn{width:42px;height:42px}
+  .dock-btn svg{width:18px;height:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  .dock-btn:hover{transform:none}
+  .dock-top{transition:opacity .01s}
+}
 </style>
 </head>
 <body>
@@ -185,6 +211,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 // подія для GTM: людина дійшла до сторінки подяки
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({event: 'lead_thank_you'});
+</script>
+
+<!-- док: звʼязок і повернення нагору -->
+<div class="dock" role="complementary" aria-label="Швидкий звʼязок">
+  <a class="dock-btn" href="mailto:tymofii@sepityi.com" aria-label="Написати на пошту" title="tymofii@sepityi.com">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
+      <path d="M3 7l8.2 6a1.4 1.4 0 0 0 1.6 0L21 7"/>
+    </svg>
+  </a>
+  <a class="dock-btn" href="https://t.me/t1seP" target="_blank" rel="noopener"
+     aria-label="Написати в Telegram" title="Telegram @t1seP">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M21.7 3.4 2.9 10.6c-1.1.4-1.1 1.1-.2 1.4l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.2-.5-1.8-1.2-1.5zM8.9 13.9l10-6.3c.5-.3.9-.1.6.2l-8.6 7.8-.3 3.6-1.7-5.3z"/>
+    </svg>
+  </a>
+  <span class="dock-sep" aria-hidden="true"></span>
+  <button class="dock-btn dock-top" id="to-top" type="button" aria-label="Нагору" title="Нагору">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+// кнопка «нагору»: зʼявляється після першого екрана
+(function(){
+  var btn = document.getElementById('to-top');
+  if (!btn) return;
+  function check(){
+    if (window.scrollY > 420) btn.classList.add('on');
+    else btn.classList.remove('on');
+  }
+  window.addEventListener('scroll', check, {passive: true});
+  check();
+  btn.addEventListener('click', function(){
+    var m = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({top: 0, behavior: m ? 'auto' : 'smooth'});
+  });
+})();
 </script>
 </body>
 </html>
