@@ -86,6 +86,64 @@ h1{font-size:clamp(38px,7.5vw,60px);font-weight:800;color:var(--ink);
 .btn:hover{filter:brightness(1.07);transform:translateY(-1px);text-decoration:none}
 .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .btn-ghost:hover{border-color:var(--ink-3);filter:none}
+.btn-xl{font-size:17px;padding:17px 32px;box-shadow:0 0 0 0 rgba(61,220,151,.5);
+  animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(61,220,151,.45)}
+  70%{box-shadow:0 0 0 14px rgba(61,220,151,0)}
+  100%{box-shadow:0 0 0 0 rgba(61,220,151,0)}
+}
+.utp{font-size:17px;line-height:1.6;color:var(--ink-2);max-width:58ch;margin:0 0 26px;
+  padding-left:16px;border-left:2px solid var(--mint)}
+.hero-note{font-size:14px;color:var(--ink-3);margin:-30px 0 44px}
+
+/* ── каталог послуг ────────────────────────── */
+.cat{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+.item{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:24px;transition:border-color .2s ease,transform .2s ease}
+.item:hover{border-color:#3B4351;transform:translateY(-2px)}
+.item-wide{grid-column:1 / -1}
+.item-h{display:flex;align-items:flex-start;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;margin-bottom:10px}
+.item-h h3{margin:0;font-size:18px;font-weight:700;color:var(--ink);line-height:1.3}
+.item p{margin:0;font-size:15px;color:var(--ink-3);line-height:1.6}
+.item-note{margin-top:10px !important;font-size:13.5px !important;color:var(--mint) !important;
+  font-weight:600}
+.tag{flex:none;font-size:13px;font-weight:700;padding:6px 13px;border-radius:99px;
+  white-space:nowrap;color:var(--ink-3);background:var(--card-2);border:1px solid var(--line)}
+.tag-free{color:#06210F;background:var(--mint);border-color:var(--mint)}
+.tag-sale{color:var(--ink);background:rgba(61,220,151,.14);border-color:rgba(61,220,151,.4)}
+.tag-sale s{color:var(--ink-3);font-weight:500;margin-right:6px}
+.item-list{margin:14px 0 0;padding-left:20px;font-size:14.5px;color:var(--ink-3);line-height:1.75}
+.item-list li{margin-bottom:3px}
+.cat-note{margin:22px 0 0;font-size:14.5px;color:var(--ink-3)}
+
+/* ── форма ─────────────────────────────────── */
+.form-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:28px}
+.form-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:14px}
+.fld label{display:block;font-size:13.5px;font-weight:600;color:var(--ink-3);margin-bottom:6px}
+.fld input,.fld textarea,.fld select{width:100%;background:var(--bg);color:var(--ink);
+  border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 14px;
+  font-family:inherit;font-size:15.5px;transition:border-color .18s ease}
+.fld input:focus,.fld textarea:focus,.fld select:focus{outline:none;border-color:var(--mint)}
+.fld textarea{min-height:104px;resize:vertical}
+.form-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  flex-wrap:wrap;margin-top:18px}
+.form-foot .fine{font-size:13px;color:var(--ink-3);max-width:44ch}
+.form-msg{display:none;margin-top:16px;padding:14px 16px;border-radius:var(--r-sm);
+  font-size:15px;font-weight:600}
+.form-msg.ok{display:block;background:var(--mint-dim);color:var(--mint);
+  border:1px solid rgba(61,220,151,.35)}
+.form-msg.err{display:block;background:rgba(224,144,140,.1);color:#E0908C;
+  border:1px solid rgba(224,144,140,.3)}
+button.btn{border:0;cursor:pointer;font-family:inherit}
+button.btn[disabled]{opacity:.6;cursor:default;animation:none}
+
+/* ── поява при прокручуванні ───────────────── */
+.reveal{opacity:0;transform:translateY(18px);
+  transition:opacity .6s cubic-bezier(.2,.7,.3,1),transform .6s cubic-bezier(.2,.7,.3,1)}
+.reveal.on{opacity:1;transform:none}
 
 /* ── картки ────────────────────────────────── */
 .grid{display:grid;gap:16px}
@@ -152,6 +210,11 @@ h1{font-size:clamp(38px,7.5vw,60px);font-weight:800;color:var(--ink);
 .api > p{margin:0 0 20px;font-size:16px;color:var(--ink-2);line-height:1.6}
 .api-note{background:var(--card-2);border:1px solid var(--line-2);border-radius:var(--r-sm);
   padding:20px}
+.api-note{cursor:default}
+.api-note>summary{cursor:pointer;list-style:none;user-select:none}
+.api-note>summary::-webkit-details-marker{display:none}
+.api-note>summary::after{content:"розгорнути";float:right;font-size:11px;color:var(--ink-3);letter-spacing:0;text-transform:none;font-weight:500}
+.api-note[open]>summary::after{content:"згорнути"}
 .api-note .lab{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
   letter-spacing:.08em;text-transform:uppercase;color:var(--mint);margin-bottom:12px}
 .api-note .lab i{width:6px;height:6px;border-radius:50%;background:var(--mint);font-style:normal}
@@ -165,7 +228,12 @@ h1{font-size:clamp(38px,7.5vw,60px);font-weight:800;color:var(--ink);
   flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--line-2)}
 .lab-s{display:block;font-size:12.5px;font-weight:700;letter-spacing:.08em;
   text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
-.mail{font-size:21px;font-weight:700;color:var(--ink);user-select:all;word-break:break-all}
+.mail{display:inline-block;font-size:21px;font-weight:700;color:var(--ink);word-break:break-all;border-bottom:1px solid transparent;transition:border-color .18s}
+.mail:hover{color:var(--mint);border-bottom-color:var(--mint);text-decoration:none}
+.cgrid a{color:var(--ink)}
+.cgrid a:hover{color:var(--mint);text-decoration:none}
+footer a{color:var(--ink-3)}
+footer a:hover{color:var(--mint)}
 .cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding-top:20px}
 .cgrid p{margin:0;font-size:16px;color:var(--ink);font-weight:500}
 
@@ -198,8 +266,10 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
 @keyframes rise{to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){
   .rise{animation:none;opacity:1;transform:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  .btn-xl{animation:none}
   html{scroll-behavior:auto}
-  .card:hover,.btn:hover{transform:none}
+  .card:hover,.btn:hover,.item:hover{transform:none}
 }
 
 /* ── адаптив ───────────────────────────────── */
@@ -228,6 +298,7 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
       <a href="#services">Послуги</a>
       <a href="#method">Метод</a>
       <a href="#api">Чому API</a>
+      <a href="#form">Заявка</a>
       <a href="#contacts">Контакти</a>
     </nav>
   </div>
@@ -244,13 +315,18 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
         Веду Google Ads для сервісного бізнесу та інтернет-магазинів. Пошук, Performance Max,
         торгові кампанії: від аудиту й запуску до щомісячної звітності.
       </p>
-      <p class="lede-2 rise" style="animation-delay:.14s">
-        Рутину роблять мої скрипти на Google Ads API. Рішення лишаються за мною.
+      <p class="utp rise" style="animation-delay:.14s">
+        Власна методика: постійна оптимізація й моніторинг акаунта силами скриптів
+        і штучного інтелекту. Те, що зазвичай перевіряють раз на місяць, у мене
+        перевіряється щодня.
       </p>
       <div class="hero-cta rise" style="animation-delay:.18s">
-        <a class="btn" href="#contacts">Безкоштовний аудит акаунту</a>
-        <a class="btn btn-ghost" href="#cases">Подивитись кейси</a>
+        <a class="btn btn-xl" href="#form">Безкоштовний аудит акаунту</a>
+        <a class="btn btn-ghost" href="#services">Послуги та ціни</a>
       </div>
+      <p class="hero-note rise" style="animation-delay:.22s">
+        Відповідаю протягом робочого дня. Аудит без зобовʼязань і без доступів на редагування.
+      </p>
 
       <div class="panel rise" style="animation-delay:.24s">
         <div class="panel-top">
@@ -279,7 +355,7 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
       <p class="sub">Цифри з місячних звітів Google Ads і Google Analytics 4. Назви компаній
         і бюджети не розкриваю за умовами співпраці.</p>
 
-      <article class="case">
+      <article class="reveal case">
         <div class="case-head">
           <h3>Покрівельні роботи, Північна Америка</h3>
           <span class="case-tag">послуги</span>
@@ -294,7 +370,7 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
         </div>
       </article>
 
-      <article class="case">
+      <article class="reveal case">
         <div class="case-head">
           <h3>B2B, програмне забезпечення, Україна</h3>
           <span class="case-tag">b2b</span>
@@ -309,7 +385,7 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
         </div>
       </article>
 
-      <article class="case">
+      <article class="reveal case">
         <div class="case-head">
           <h3>Інтернет-магазин, парфумерія, Україна</h3>
           <span class="case-tag">e-commerce</span>
@@ -325,12 +401,12 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
       </article>
 
       <div class="grid g2" style="margin-top:26px">
-        <blockquote class="quote">
+        <blockquote class="reveal quote">
           <p>«Після чистки нецільового трафіку та доопрацювання списку мінус-слів вартість заявки
              знизилася майже вдвічі, а кількість якісних звернень помітно зросла.»</p>
           <cite>власник будівельної компанії</cite>
         </blockquote>
-        <blockquote class="quote">
+        <blockquote class="reveal quote">
           <p>«Конкурентна ніша, де багато реклами зливається на випадкові кліки. Кампанії
              переналаштовані на реальні продажі, а не на трафік заради трафіку.»</p>
           <cite>власник інтернет-магазину</cite>
@@ -343,28 +419,72 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
   <section class="sec" id="services">
     <div class="wrap">
       <p class="eyebrow">Послуги</p>
-      <h2>З чого зазвичай починаємо</h2>
-      <p class="sub">Більшість приходить за аудитом або прогнозом, далі вирішує, що робити далі.</p>
-      <div class="grid g3">
-        <div class="card">
-          <span class="num">01</span>
-          <h3>Аудит акаунту</h3>
-          <p>Перевірка за 53 пунктами: структура, семантика, оголошення, мінус-слова, гео,
-             налаштування, конверсії. На виході список правок за пріоритетом.</p>
-        </div>
-        <div class="card">
-          <span class="num">02</span>
-          <h3>Прогноз бюджету</h3>
-          <p>Скільки людей шукає вашу послугу, скільки коштує клік і скільки заявок реально
-             отримати. До того, як ви витратите першу гривню.</p>
-        </div>
-        <div class="card">
-          <span class="num">03</span>
-          <h3>Запуск і ведення</h3>
-          <p>Збір семантики, структура, оголошення, налаштування конверсій через GA4 і GTM,
-             далі щоденна оптимізація і звіт раз на місяць.</p>
-        </div>
+      <h2>Каталог послуг</h2>
+      <p class="sub">Почати можна з безкоштовного аудиту або прогнозу. Далі вирішуєте самі.</p>
+
+      <div class="cat">
+        <article class="item reveal">
+          <div class="item-h">
+            <h3>Первинний аудит рекламного акаунту</h3>
+            <span class="tag tag-free">безкоштовно</span>
+          </div>
+          <p>Перевірка акаунта за основними напрямками: структура кампаній, семантика,
+             оголошення, мінус-слова, географія, налаштування. На виході перелік знахідок
+             із поясненням, що кожна з них означає.</p>
+        </article>
+
+        <article class="item reveal">
+          <div class="item-h">
+            <h3>Розширений аудит</h3>
+            <span class="tag tag-sale"><s>2999 грн</s> 1499 грн</span>
+          </div>
+          <p>Повний аудит рекламного акаунту, аналіз конкурентів у вашій ніші та перевірка
+             сайту на придатність до платного трафіку. Документ із пріоритезованим планом
+             дій, який можна виконувати самостійно або зі мною.</p>
+          <p class="item-note">Ціна діє до 1 вересня.</p>
+        </article>
+
+        <article class="item reveal">
+          <div class="item-h">
+            <h3>Прогноз рекламних послуг</h3>
+            <span class="tag tag-free">безкоштовно</span>
+          </div>
+          <p>Скільки людей у вашому місті шукає ваші послуги щомісяця, скільки коштує клік
+             у ніші та скільки звернень реально отримати за конкретний бюджет. Розрахунок
+             на даних Google, а не на оцінках.</p>
+        </article>
+
+        <article class="item reveal">
+          <div class="item-h">
+            <h3>Доналаштування наявного акаунту</h3>
+            <span class="tag">за домовленістю</span>
+          </div>
+          <p>Створення потрібних кампаній у вашому чинному акаунті: пошук, Performance Max,
+             торгові, ремаркетинг. Підходить, якщо реклама вже працює, але частина напрямків
+             не закрита.</p>
+        </article>
+
+        <article class="item item-wide reveal">
+          <div class="item-h">
+            <h3>Повний пакет</h3>
+            <span class="tag">за домовленістю</span>
+          </div>
+          <p>Робота під ключ від аналізу до щомісячної звітності.</p>
+          <ul class="item-list">
+            <li>Аналіз цільової аудиторії та конкурентів</li>
+            <li>Аудит сайту на придатність до реклами</li>
+            <li>Прогноз бюджету й очікуваних результатів</li>
+            <li>Налаштування Google Ads з нуля</li>
+            <li>Google Analytics 4, Google Tag Manager, відстеження заявок і дзвінків</li>
+            <li>Google Merchant Center для товарного бізнесу</li>
+            <li>Постійна оптимізація акаунта</li>
+            <li>Щомісячна звітність зрозумілою мовою</li>
+          </ul>
+        </article>
       </div>
+
+      <p class="cat-note">Вартість решти робіт визначається обсягом. Після короткої розмови
+        називаю конкретну суму, а не діапазон.</p>
     </div>
   </section>
 
@@ -375,22 +495,22 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
       <h2>Рутина на скриптах, рішення за людиною</h2>
       <p class="sub">Те, що більшість робить руками або не робить взагалі, у мене працює саме.</p>
       <div class="grid g2">
-        <div class="card">
+        <div class="reveal card">
           <h3>Аудит за 53 перевірками</h3>
           <p>Проганяється скриптом, читається людиною. Два дні замість двох тижнів,
              і жоден пункт не забувається.</p>
         </div>
-        <div class="card">
+        <div class="reveal card">
           <h3>Прогноз на реальних даних</h3>
           <p>Скільки коштує клік саме у вашій ніші й вашому місті, з Keyword Planner,
              а не «в середньому по ринку».</p>
         </div>
-        <div class="card">
+        <div class="reveal card">
           <h3>Кожен запит прочитаний</h3>
           <p>Щодня, автоматично. Нерелевантні йдуть у мінус-слова, спірні виносяться
              на рішення. Наосліп не вимикається нічого.</p>
         </div>
-        <div class="card">
+        <div class="reveal card">
           <h3>Свої інструменти</h3>
           <p>Пишу на Python і Google Ads API під конкретні задачі своїх акаунтів.
              Не плачу за підписки і не залежу від чужих обмежень.</p>
@@ -416,8 +536,8 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
           власних модулів аналітики. Це дає доступ до щоденної статистики напряму і дозволяє
           робити зведені звіти для клієнтів без ручних помилок.</p>
 
-        <div class="api-note">
-          <span class="lab"><i></i>Для Google API Audit Team / Developer Token Review</span>
+        <details class="api-note">
+          <summary class="lab"><i></i>Технічна інформація для Google API Audit Team</summary>
           <p>Цей веб-ресурс є офіційним сайтом-портфоліо незалежного спеціаліста з маркетингу.
             Я подаю запит на отримання <strong>Developer Token</strong> для розробки внутрішнього
             застосунку (<strong>Internal Tool</strong>), який працює з рекламними акаунтами під
@@ -435,7 +555,7 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
             <li><strong>Безпека:</strong> дані обробляються згідно з Google Ads API Terms &amp; Conditions
                 та Limited Use Requirements.</li>
           </ul>
-        </div>
+        </details>
       </div>
     </div>
   </section>
@@ -443,22 +563,71 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
   <!-- КОНТАКТИ -->
   <section class="sec" id="contacts">
     <div class="wrap">
-      <p class="eyebrow">Контакти</p>
-      <h2>Напишіть, подивлюсь ваш акаунт</h2>
-      <p class="sub">Розкажіть коротко про бізнес і що зараз не влаштовує в рекламі.
-        Відповім і чесно скажу, чи можу бути корисним.</p>
+      <p class="eyebrow">Заявка</p>
+      <h2 id="form">Безкоштовний аудит рекламного акаунту</h2>
+      <p class="sub">Заповніть форму, і я подивлюсь ваш акаунт. Якщо реклами ще немає,
+        замість аудиту зроблю прогноз бюджету. Відповідаю протягом робочого дня.</p>
+
+      <div class="form-wrap reveal">
+        <!--
+          Formspree: створи форму на formspree.io (безкоштовно, 50 заявок на місяць),
+          підстав свій ID замість YOUR_FORM_ID нижче. Той самий сервіс використано
+          на сайті LeasingCom.
+        -->
+        <form id="lead-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="fld">
+              <label for="f-name">Ваше імʼя</label>
+              <input id="f-name" name="Імʼя" type="text" required autocomplete="name">
+            </div>
+            <div class="fld">
+              <label for="f-contact">Телефон або email</label>
+              <input id="f-contact" name="Контакт" type="text" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fld">
+              <label for="f-site">Сайт</label>
+              <input id="f-site" name="Сайт" type="text" placeholder="example.com.ua">
+            </div>
+            <div class="fld">
+              <label for="f-service">Що цікавить</label>
+              <select id="f-service" name="Послуга">
+                <option>Безкоштовний аудит акаунту</option>
+                <option>Розширений аудит</option>
+                <option>Безкоштовний прогноз бюджету</option>
+                <option>Доналаштування наявного акаунту</option>
+                <option>Повний пакет</option>
+                <option>Ще не визначився</option>
+              </select>
+            </div>
+          </div>
+          <div class="fld">
+            <label for="f-msg">Коротко про бізнес і що не влаштовує в рекламі</label>
+            <textarea id="f-msg" name="Повідомлення"></textarea>
+          </div>
+          <div class="form-foot">
+            <button class="btn btn-xl" type="submit">Надіслати заявку</button>
+            <span class="fine">Доступи на редагування не потрібні. Дані нікому не передаються.</span>
+          </div>
+          <div class="form-msg" id="form-msg"></div>
+        </form>
+      </div>
+
+      <h2 style="margin-top:52px">Або напишіть напряму</h2>
+      <p class="sub">Якщо зручніше поштою чи телефоном.</p>
       <div class="contact">
         <div class="contact-top">
           <div>
             <span class="lab-s">Email</span>
-            <span class="mail">tymofii@sepityi.com</span>
+            <a class="mail" href="mailto:tymofii@sepityi.com">tymofii@sepityi.com</a>
           </div>
           <a class="btn" href="mailto:tymofii@sepityi.com">Надіслати листа</a>
         </div>
         <div class="cgrid">
           <div>
             <span class="lab-s">Телефон</span>
-            <p>+380 96 276 5144</p>
+            <p><a href="tel:+380962765144">+380 96 276 5144</a></p>
           </div>
           <div>
             <span class="lab-s">Адреса</span>
@@ -476,7 +645,7 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
     <div>
       <p>© 2026 Сепітий Тимофій Ігорович. Всі права захищено.</p>
       <p class="fine">Незалежний спеціаліст з Google Ads (self-employed) · Київ, Україна ·
-         tymofii@sepityi.com · +380 96 276 5144</p>
+         <a href="mailto:tymofii@sepityi.com">tymofii@sepityi.com</a> · <a href="tel:+380962765144">+380 96 276 5144</a></p>
     </div>
     <div class="legal">
       <button type="button" onclick="toggleModal('privacy')">Privacy Policy</button>
@@ -515,6 +684,55 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
 </div>
 
 <script>
+// поява блоків при прокручуванні
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(e){ e.classList.add('on'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); }
+    });
+  }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+// відправка заявки без перезавантаження сторінки
+(function(){
+  var form = document.getElementById('lead-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    var msg = document.getElementById('form-msg');
+    btn.disabled = true;
+    var starText = btn.textContent;
+    btn.textContent = 'Надсилаю...';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {'Accept': 'application/json'}
+    }).then(function(r){
+      if (r.ok) {
+        form.reset();
+        msg.className = 'form-msg ok';
+        msg.textContent = 'Заявку надіслано. Відповім протягом робочого дня.';
+      } else {
+        throw new Error('bad response');
+      }
+    }).catch(function(){
+      msg.className = 'form-msg err';
+      msg.innerHTML = 'Не вдалось надіслати. Напишіть, будь ласка, на ' +
+        '<a href="mailto:tymofii@sepityi.com">tymofii@sepityi.com</a>';
+    }).finally(function(){
+      btn.disabled = false;
+      btn.textContent = starText;
+    });
+  });
+})();
+
 function toggleModal(id){
   document.getElementById('modal-' + id).classList.toggle('open');
 }
