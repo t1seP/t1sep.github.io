@@ -72,7 +72,11 @@ a:hover{text-decoration:underline}
 .head{border-bottom:1px solid var(--line-2)}
 .head .wrap{display:flex;align-items:center;justify-content:space-between;
   gap:16px;padding-top:15px;padding-bottom:15px;max-width:880px}
-.brand{font-size:15px;font-weight:700;color:var(--ink)}
+.brand{display:inline-flex;align-items:center;font-size:15px;font-weight:700;
+  color:var(--ink);white-space:nowrap;transition:opacity .18s ease}
+.brand:hover{opacity:.75;text-decoration:none}
+.brand span{margin:0 8px;color:var(--line);font-weight:400}
+.brand b{font-weight:600;color:var(--ink-3)}
 .brand i{display:inline-block;width:7px;height:7px;border-radius:50%;
   background:var(--mint);margin-right:8px;vertical-align:middle;font-style:normal}
 .back{font-size:14.5px;color:var(--ink-3)}
@@ -128,6 +132,7 @@ footer p{margin:0;font-size:13px;color:#6C7688;line-height:1.6}
   .btn:hover{transform:none}
 }
 @media (max-width:620px){
+  .brand span,.brand b{display:none}
   main{padding:40px 0}
   .steps,.direct{padding:20px}
 }
@@ -183,7 +188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="head">
   <div class="wrap">
-    <a class="brand" href="/"><i></i>Тимофій Сепітий</a>
+    <a class="brand" href="/" aria-label="На головну сторінку"><i></i>Тимофій Сепітий<span>|</span><b>PPC Specialist</b></a>
     <a class="back" href="/">На головну</a>
   </div>
 </header>

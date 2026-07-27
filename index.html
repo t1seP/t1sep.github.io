@@ -67,7 +67,11 @@ strong{color:var(--ink);font-weight:700}
   backdrop-filter:blur(12px);border-bottom:1px solid var(--line-2)}
 .head .wrap{display:flex;align-items:center;justify-content:space-between;
   gap:16px;padding-top:15px;padding-bottom:15px}
-.brand{font-size:15px;font-weight:700;color:var(--ink)}
+.brand{display:inline-flex;align-items:center;font-size:15px;font-weight:700;
+  color:var(--ink);white-space:nowrap;transition:opacity .18s ease}
+.brand:hover{opacity:.75;text-decoration:none}
+.brand span{margin:0 8px;color:var(--line);font-weight:400}
+.brand b{font-weight:600;color:var(--ink-3)}
 .brand i{display:inline-block;width:7px;height:7px;border-radius:50%;
   background:var(--mint);margin-right:8px;vertical-align:middle;font-style:normal}
 .nav{display:flex;gap:22px;font-size:14.5px;font-weight:500;flex-wrap:wrap}
@@ -297,6 +301,7 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
   .g3,.g2,.pr,.cgrid{grid-template-columns:1fr}
   .head .wrap{flex-direction:column;align-items:flex-start;gap:11px}
   .nav{gap:16px;font-size:14px}
+  .brand span,.brand b{display:none}
   .sec{padding:50px 0}
   .q{flex-direction:column;align-items:flex-start;gap:9px}
   .case,.card,.api,.contact,.quote{padding:20px}
@@ -354,7 +359,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="head">
   <div class="wrap">
-    <div class="brand"><i></i>Тимофій Сепітий</div>
+    <a class="brand" href="/" aria-label="На головну сторінку"><i></i>Тимофій Сепітий<span>|</span><b>PPC Specialist</b></a>
     <nav class="nav">
       <a href="#cases">Кейси</a>
       <a href="#services">Послуги</a>
