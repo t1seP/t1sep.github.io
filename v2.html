@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тимофій Сепітий — спеціаліст з Google Ads у Києві</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B0D11">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0D11;
+  --ink:#F2F4F7;
+  --ink-2:#A8B0BD;
+  --ink-3:#6B7484;
+  --rule:#232833;
+  --rule-2:#171B22;
+  --accent:#C8A45C;          /* приглушене золото: дорожче за неон */
+  --accent-dim:rgba(200,164,92,.13);
+  --maxw:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink-2);
+  font:400 16.5px/1.7 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+a{color:var(--ink);text-decoration:none}
+::selection{background:var(--accent);color:#14100A}
+:focus-visible{outline:1px solid var(--accent);outline-offset:4px}
+
+h1,h2,h3{font-family:'PT Serif',Georgia,serif;font-weight:700;color:var(--ink);
+  letter-spacing:-.01em;margin:0}
+.mono{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3)}
+
+/* ── шапка ─────────────────────────────────── */
+header{position:sticky;top:0;z-index:40;background:rgba(11,13,17,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--rule-2)}
+header .wrap{display:flex;align-items:baseline;justify-content:space-between;
+  gap:24px;padding-top:20px;padding-bottom:20px}
+.logo{font-family:'PT Serif',serif;font-weight:700;font-size:17px;color:var(--ink)}
+.logo em{font-style:normal;color:var(--ink-3);font-family:'Inter';font-weight:400;
+  font-size:14px;margin-left:12px;padding-left:12px;border-left:1px solid var(--rule)}
+nav{display:flex;gap:26px;font-size:14px}
+nav a{color:var(--ink-3)}
+nav a:hover{color:var(--accent)}
+
+/* ── титул ─────────────────────────────────── */
+.title{padding:96px 0 72px;border-bottom:1px solid var(--rule)}
+.title .mono{display:block;margin-bottom:26px}
+h1{font-size:clamp(38px,5.6vw,64px);line-height:1.12;max-width:19ch;margin-bottom:30px}
+h1 i{font-style:italic;color:var(--accent)}
+.title-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:end}
+.lede{font-size:18px;line-height:1.65;max-width:46ch}
+.title-meta dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);font-family:'JetBrains Mono',monospace;margin-bottom:5px}
+.title-meta dd{margin:0 0 20px;color:var(--ink);font-size:15.5px}
+.title-meta dd:last-child{margin-bottom:0}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
+.btn{display:inline-block;padding:15px 30px;font-size:15.5px;font-weight:600;
+  background:var(--accent);color:#14100A;transition:background .18s}
+.btn:hover{background:#DBB971}
+.btn-line{background:none;color:var(--ink);border:1px solid var(--rule)}
+.btn-line:hover{background:none;border-color:var(--accent);color:var(--accent)}
+
+/* ── нумерований розділ ────────────────────── */
+.sec{padding:78px 0;border-bottom:1px solid var(--rule)}
+.sec-grid{display:grid;grid-template-columns:210px 1fr;gap:56px}
+.sec-side{position:sticky;top:106px;align-self:start}
+.sec-num{font-family:'PT Serif',serif;font-size:54px;color:var(--rule);
+  line-height:1;display:block;margin-bottom:12px}
+.sec-side h2{font-size:22px;line-height:1.25;margin-bottom:12px}
+.sec-side p{margin:0;font-size:14px;color:var(--ink-3);line-height:1.6}
+
+/* ── принципи ──────────────────────────────── */
+.rules{margin:0;padding:0;list-style:none}
+.rules li{display:grid;grid-template-columns:auto 1fr;gap:22px;
+  padding:20px 0;border-top:1px solid var(--rule-2)}
+.rules li:first-child{border-top:0;padding-top:0}
+.rules b{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);
+  font-weight:500;padding-top:5px}
+.rules strong{display:block;color:var(--ink);font-weight:600;font-size:16.5px;margin-bottom:3px}
+.rules span{font-size:15px;color:var(--ink-3)}
+
+/* ── кейси таблицею ────────────────────────── */
+.case{padding:26px 0;border-top:1px solid var(--rule-2)}
+.case:first-child{border-top:0;padding-top:0}
+.case-top{display:flex;align-items:baseline;justify-content:space-between;
+  gap:18px;flex-wrap:wrap;margin-bottom:6px}
+.case-top h3{font-size:19px}
+.case-what{margin:0 0 18px;font-size:15px;color:var(--ink-3);max-width:70ch}
+.nums{display:flex;gap:44px;flex-wrap:wrap}
+.nums div{min-width:92px}
+.nums b{display:block;font-family:'PT Serif',serif;font-size:30px;color:var(--accent);
+  line-height:1;font-variant-numeric:tabular-nums}
+.nums b.n{color:var(--ink)}
+.nums span{display:block;font-size:13px;color:var(--ink-3);margin-top:6px}
+
+/* ── послуги списком ───────────────────────── */
+.price{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:baseline;
+  padding:22px 0;border-top:1px solid var(--rule-2)}
+.price:first-child{border-top:0;padding-top:0}
+.price h3{font-size:18px;margin-bottom:5px}
+.price p{margin:0;font-size:14.5px;color:var(--ink-3);max-width:62ch}
+.price .val{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--ink);
+  white-space:nowrap;letter-spacing:0;text-transform:none}
+.price .val s{color:var(--ink-3);margin-right:8px}
+.price .free{color:var(--accent)}
+.price ul{margin:10px 0 0;padding-left:18px;font-size:14px;color:var(--ink-3);
+  columns:2;column-gap:34px}
+
+/* ── цитати ────────────────────────────────── */
+.quote{padding:24px 0;border-top:1px solid var(--rule-2)}
+.quote:first-child{border-top:0;padding-top:0}
+.quote p{font-family:'PT Serif',serif;font-size:19px;line-height:1.55;color:var(--ink);
+  margin:0 0 10px}
+.quote cite{font-style:normal;font-size:13px;color:var(--ink-3)}
+
+/* ── контакт ───────────────────────────────── */
+.end{padding:86px 0}
+.end h2{font-size:clamp(28px,4vw,40px);max-width:16ch;margin-bottom:22px}
+.end p{font-size:17px;max-width:52ch;margin:0 0 34px}
+.end-row{display:flex;gap:44px;flex-wrap:wrap;padding-top:30px;
+  margin-top:38px;border-top:1px solid var(--rule)}
+.end-row dt{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.end-row dd{margin:0;font-size:17px;color:var(--ink)}
+.end-row a:hover{color:var(--accent)}
+
+footer{border-top:1px solid var(--rule-2);padding:26px 0 40px;font-size:13px;color:var(--ink-3)}
+
+@media (max-width:900px){
+  .title-grid,.sec-grid{grid-template-columns:1fr;gap:32px}
+  .sec-side{position:static}
+  .sec-num{font-size:38px}
+  .price ul{columns:1}
+}
+@media (max-width:600px){
+  .wrap{padding:0 20px}
+  .title{padding:56px 0 44px}
+  .sec{padding:52px 0}
+  nav{display:none}
+  .nums{gap:26px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="/v2.html">Тимофій Сепітий<em>PPC Specialist</em></a>
+    <nav>
+      <a href="#method">Метод</a>
+      <a href="#cases">Результати</a>
+      <a href="#services">Послуги</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="title">
+    <div class="wrap">
+      <span class="mono">Google Ads · Київ · від 2025 року</span>
+      <h1>Реклама, у якій <i>видно</i> кожну витрачену гривню</h1>
+      <div class="title-grid">
+        <div>
+          <p class="lede">Веду Google Ads для сервісного бізнесу та інтернет-магазинів.
+            Акаунт перевіряється щодня власними скриптами, а не раз на місяць перед звітом.</p>
+          <div class="cta-row">
+            <a class="btn" href="#contact">Звʼязатись зі мною</a>
+            <a class="btn btn-line" href="#services">Послуги та ціни</a>
+          </div>
+        </div>
+        <dl class="title-meta">
+          <dt>Напрямки</dt>
+          <dd>Пошук · Performance Max · Торгові · Demand Gen</dd>
+          <dt>Ринки</dt>
+          <dd>Україна, Канада, США</dd>
+          <dt>Перший крок</dt>
+          <dd>Безкоштовний аудит або прогноз</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="method">
+    <div class="wrap sec-grid">
+      <div class="sec-side">
+        <span class="sec-num">01</span>
+        <h2>Метод</h2>
+        <p>Рутину виконують скрипти. Рішення лишаються за людиною.</p>
+      </div>
+      <ul class="rules">
+        <li><b>01</b><span><strong>Щоденний моніторинг</strong>Акаунт перевіряється кожного дня, а не раз на місяць перед звітом.</span></li>
+        <li><b>02</b><span><strong>Масове A/B тестування</strong>Оголошення тестуються пачками й безперервно, а не по одному раз на квартал.</span></li>
+        <li><b>03</b><span><strong>Чистка нецільового трафіку</strong>Запити, за якими показується реклама, читаються і відсіюються регулярно.</span></li>
+        <li><b>04</b><span><strong>Розрахунки на даних Google</strong>Прогноз бюджету береться з Keyword Planner, а не з середніх по ринку.</span></li>
+        <li><b>05</b><span><strong>Звіт зрозумілою мовою</strong>Що зроблено, що змінилось і що далі. Без графіків, які нічого не пояснюють.</span></li>
+        <li><b>06</b><span><strong>Акаунт лишається вашим</strong>Кампанії будуються у вашому кабінеті. Доступи й дані у вас.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="cases">
+    <div class="wrap sec-grid">
+      <div class="sec-side">
+        <span class="sec-num">02</span>
+        <h2>Результати</h2>
+        <p>Зміни за перший місяць роботи. Цифри з місячних звітів Google Ads і GA4.</p>
+      </div>
+      <div>
+        <article class="case">
+          <div class="case-top"><h3>Покрівельні роботи, Північна Америка</h3><span class="mono">Послуги</span></div>
+          <p class="case-what">Структура кампаній перебудована під сезонність попиту, вичищено нецільовий трафік, кампанії переведено на цільову ціну конверсії.</p>
+          <div class="nums">
+            <div><b>+70%</b><span>заявок</span></div>
+            <div><b>−42%</b><span>ціна заявки</span></div>
+            <div><b>+37%</b><span>CTR у пошуку</span></div>
+            <div><b class="n">0%</b><span>зміна бюджету</span></div>
+          </div>
+        </article>
+        <article class="case">
+          <div class="case-top"><h3>B2B, програмне забезпечення, Україна</h3><span class="mono">B2B</span></div>
+          <p class="case-what">Перероблено семантичне ядро, розширено мінус-слова, підвищено якість оголошень, бюджети перерозподілено за конверсійністю.</p>
+          <div class="nums">
+            <div><b>+157%</b><span>кліків</span></div>
+            <div><b>−55%</b><span>ціна кліка</span></div>
+            <div><b>+28%</b><span>CTR у пошуку</span></div>
+            <div><b class="n">+15%</b><span>зміна бюджету</span></div>
+          </div>
+        </article>
+        <article class="case">
+          <div class="case-top"><h3>Інтернет-магазин, парфумерія, Україна</h3><span class="mono">E-commerce</span></div>
+          <p class="case-what">Зупинено неконверсійні кампанії, бюджет перекинуто на робочі, оновлено обʼєкти й відео в Performance Max.</p>
+          <div class="nums">
+            <div><b>227%</b><span>ROAS</span></div>
+            <div><b>−10%</b><span>ціна конверсії</span></div>
+            <div><b class="n">104</b><span>замовлення</span></div>
+            <div><b class="n">+23%</b><span>конверсій</span></div>
+          </div>
+        </article>
+        <p style="margin:26px 0 0;font-size:13.5px;color:var(--ink-3)">
+          Назви компаній і рекламні бюджети не розкриваються за умовами співпраці.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap sec-grid">
+      <div class="sec-side">
+        <span class="sec-num">03</span>
+        <h2>Відгуки</h2>
+        <p>Зі слів замовників, у яких велись акаунти.</p>
+      </div>
+      <div>
+        <blockquote class="quote">
+          <p>«Після чистки нецільового трафіку вартість заявки знизилася майже вдвічі, а кількість якісних звернень помітно зросла.»</p>
+          <cite>власник будівельної компанії</cite>
+        </blockquote>
+        <blockquote class="quote">
+          <p>«Конкурентна ніша, де багато реклами зливається на випадкові кліки. Кампанії переналаштовані на реальні продажі, а не на трафік заради трафіку.»</p>
+          <cite>власник інтернет-магазину</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="services">
+    <div class="wrap sec-grid">
+      <div class="sec-side">
+        <span class="sec-num">04</span>
+        <h2>Послуги</h2>
+        <p>Почати можна з безкоштовного аудиту або прогнозу.</p>
+      </div>
+      <div>
+        <div class="price">
+          <div><h3>Первинний аудит рекламного акаунту</h3>
+            <p>Перевірка структури кампаній, семантики, оголошень, мінус-слів, географії та налаштувань. Перелік знахідок із поясненням кожної.</p></div>
+          <span class="val free">безкоштовно</span>
+        </div>
+        <div class="price">
+          <div><h3>Розширений аудит</h3>
+            <p>Повний аудит акаунту, аналіз конкурентів у ніші та перевірка сайту на придатність до платного трафіку. Документ із пріоритезованим планом дій.</p></div>
+          <span class="val"><s>2999 грн</s>1499 грн</span>
+        </div>
+        <div class="price">
+          <div><h3>Прогноз рекламних послуг</h3>
+            <p>Скільки людей у вашому місті шукає ваші послуги, скільки коштує клік і скільки звернень реально отримати за конкретний бюджет.</p></div>
+          <span class="val free">безкоштовно</span>
+        </div>
+        <div class="price">
+          <div><h3>Доналаштування наявного акаунту</h3>
+            <p>Створення потрібних кампаній у чинному акаунті: пошук, Performance Max, торгові, ремаркетинг.</p></div>
+          <span class="val">за домовленістю</span>
+        </div>
+        <div class="price">
+          <div><h3>Повний пакет</h3>
+            <p>Робота під ключ від аналізу до щомісячної звітності.</p>
+            <ul>
+              <li>Аналіз цільової аудиторії</li><li>Аудит сайту</li>
+              <li>Прогноз бюджету</li><li>Налаштування Google Ads</li>
+              <li>GA4, Tag Manager, трекінг заявок</li><li>Merchant Center</li>
+              <li>Постійна оптимізація</li><li>Щомісячна звітність</li>
+            </ul></div>
+          <span class="val">за домовленістю</span>
+        </div>
+        <p style="margin:26px 0 0;font-size:13.5px;color:var(--ink-3)">
+          Вартість решти робіт визначається обсягом. Після короткої розмови називаю конкретну суму, а не діапазон.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="end" id="contact">
+    <div class="wrap">
+      <span class="mono">05 — Контакти</span>
+      <h2 style="margin-top:20px">Напишіть, і я подивлюсь ваш акаунт</h2>
+      <p>Розкажіть коротко про бізнес і що зараз не влаштовує в рекламі. Якщо реклами ще немає,
+         замість аудиту зроблю прогноз бюджету. Відповідаю протягом робочого дня.</p>
+      <a class="btn" href="/#form">Заповнити заявку</a>
+      <dl class="end-row">
+        <div><dt>Пошта</dt><dd><a href="mailto:tymofii@sepityi.com">tymofii@sepityi.com</a></dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+380962765144">+380 96 276 5144</a></dd></div>
+        <div><dt>Telegram</dt><dd><a href="https://t.me/t1seP" target="_blank" rel="noopener">@t1seP</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Сепітий Тимофій Ігорович · Незалежний спеціаліст з Google Ads · Київ</div>
+</footer>
+
+</body>
+</html>
