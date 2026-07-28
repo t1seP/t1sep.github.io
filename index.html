@@ -426,6 +426,28 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
   opacity:0;visibility:hidden;transition:opacity .22s ease,transform .22s ease,visibility .22s}
 .toast.on{opacity:1;visibility:visible;transform:translate(-50%,0)}
 @media (prefers-reduced-motion:reduce){.toast{transition:opacity .01s}}
+
+/* ── перелік переваг у героєві ─────────────── */
+.perks{display:grid;grid-template-columns:repeat(3,1fr);
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;box-shadow:0 20px 50px -30px rgba(0,0,0,.9)}
+.perk{padding:20px 22px;border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+.perk:nth-child(3n){border-right:0}
+.perk:nth-child(n+4){border-bottom:0}
+.perk b{display:block;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.perk span{display:block;font-size:14px;color:var(--ink-3);line-height:1.55}
+@media (max-width:760px){
+  .perks{grid-template-columns:repeat(2,1fr)}
+  .perk:nth-child(3n){border-right:1px solid var(--line-2)}
+  .perk:nth-child(2n){border-right:0}
+  .perk:nth-child(n+4){border-bottom:1px solid var(--line-2)}
+  .perk:nth-child(n+5){border-bottom:0}
+}
+@media (max-width:520px){
+  .perks{grid-template-columns:1fr}
+  .perk{border-right:0 !important;border-bottom:1px solid var(--line-2) !important}
+  .perk:last-child{border-bottom:0 !important}
+}
 </style>
 </head>
 <body>
@@ -471,21 +493,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         Відповідаю протягом робочого дня. Аудит без зобовʼязань і без доступів на редагування.
       </p>
 
-      <div class="panel rise" style="animation-delay:.24s">
-        <div class="panel-top">
-          <span>Що я роблю щодня</span>
-          <span>приклад</span>
-        </div>
-        <div class="q"><span>монтаж опалення київ ціна</span><span class="chip keep">лишити</span></div>
-        <div class="q"><span>монтаж опалення своїми руками</span><span class="chip cut">виключити</span></div>
-        <div class="q"><span>встановлення газового котла київ</span><span class="chip keep">лишити</span></div>
-        <div class="q"><span>схема опалення креслення безкоштовно</span><span class="chip cut">виключити</span></div>
-        <div class="q"><span>монтажник опалення вакансія</span><span class="chip cut">виключити</span></div>
-        <div class="panel-foot">
-          Кожен запит, за яким показалась ваша реклама, треба прочитати і вирішити, чи він вам
-          потрібен. Тисячі запитів на тиждень руками не читає ніхто, тому саме тут витікає бюджет.
-          У мене це робить скрипт щодня, а спірні випадки виносить мені на рішення.
-        </div>
+      <div class="perks rise" style="animation-delay:.24s">
+        <div class="perk"><b>Щоденний моніторинг</b><span>Акаунт перевіряється щодня, а не раз на місяць перед звітом.</span></div>
+        <div class="perk"><b>Масове A/B тестування</b><span>Оголошення тестуються пачками й постійно, а не по одному раз на квартал.</span></div>
+        <div class="perk"><b>Чистка нецільового трафіку</b><span>Запити, за якими показується реклама, читаються і відсіюються регулярно.</span></div>
+        <div class="perk"><b>Розрахунки на даних Google</b><span>Прогноз бюджету з Keyword Planner, а не «в середньому по ринку».</span></div>
+        <div class="perk"><b>Звіт зрозумілою мовою</b><span>Що зроблено, що змінилось і що далі. Без графіків, які нічого не пояснюють.</span></div>
+        <div class="perk"><b>Акаунт лишається вашим</b><span>Кампанії будую у вашому кабінеті. Доступи й дані у вас.</span></div>
       </div>
     </div>
   </section>
