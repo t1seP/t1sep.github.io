@@ -448,6 +448,15 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
   .perk{border-right:0 !important;border-bottom:1px solid var(--line-2) !important}
   .perk:last-child{border-bottom:0 !important}
 }
+
+/* ── згода на обробку даних ────────────────── */
+.consent{display:flex;align-items:flex-start;gap:11px;margin-top:18px;
+  font-size:14px;color:var(--ink-3);line-height:1.55;cursor:pointer}
+.consent input{flex:none;width:19px;height:19px;margin:2px 0 0;cursor:pointer;
+  accent-color:var(--mint)}
+.consent-link{background:none;border:0;padding:0;font:inherit;color:var(--mint);
+  cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.consent-link:hover{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -726,12 +735,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         замість аудиту зроблю прогноз бюджету. Відповідаю протягом робочого дня.</p>
 
       <div class="form-wrap reveal">
-        <!--
-          Formspree: створи форму на formspree.io (безкоштовно, 50 заявок на місяць),
-          підстав свій ID замість YOUR_FORM_ID нижче. Той самий сервіс використано
-          на сайті LeasingCom.
-        -->
-        <form id="lead-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form id="lead-form" action="https://formspree.io/f/xkodkdpb" method="POST">
           <input type="hidden" name="_next" value="https://sepityi.com/thank-you.html">
           <input type="hidden" name="_subject" value="Заявка з sepityi.com">
           <div class="form-row">
@@ -765,6 +769,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <label for="f-msg">Коротко про бізнес і що не влаштовує в рекламі</label>
             <textarea id="f-msg" name="Повідомлення"></textarea>
           </div>
+          <label class="consent">
+            <input type="checkbox" name="Згода" value="так" required>
+            <span>Погоджуюсь на обробку моїх даних для звʼязку зі мною та приймаю
+              <button type="button" class="consent-link" onclick="toggleModal('privacy')">політику конфіденційності</button>.</span>
+          </label>
           <div class="form-foot">
             <button class="btn btn-xl" type="submit">Надіслати заявку</button>
             <span class="fine">Доступи на редагування не потрібні. Дані нікому не передаються.</span>
