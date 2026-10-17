@@ -1,0 +1,69 @@
+/* Спільні стилі для документних сторінок: ads-toolkit, privacy, terms.
+   Ті самі токени, що й на головній, щоб сторінки виглядали одним сайтом. */
+:root{
+  --bg:#0A0C10;
+  --card:#161A21;
+  --card-2:#1D222B;
+  --line:#2A303B;
+  --line-2:#222831;
+  --ink:#FFFFFF;
+  --ink-2:#C4CBD8;
+  --ink-3:#8B94A5;
+  --mint:#3DDC97;
+  --r:16px;
+  --r-sm:10px;
+  --maxw:820px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink-2);
+  font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+a{color:var(--mint);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:var(--ink)}
+:focus-visible{outline:2px solid var(--mint);outline-offset:3px;border-radius:4px}
+strong{color:var(--ink);font-weight:700}
+
+.head{border-bottom:1px solid var(--line-2);background:var(--bg)}
+.head .wrap{display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;padding-top:15px;padding-bottom:15px}
+.brand{font-size:15px;font-weight:700;color:var(--ink);text-decoration:none}
+.brand i{display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:var(--mint);margin-right:8px;vertical-align:middle}
+.nav{display:flex;gap:18px;flex-wrap:wrap;font-size:14.5px;font-weight:500}
+.nav a{color:var(--ink-3);text-decoration:none}
+.nav a:hover,.nav a[aria-current]{color:var(--ink)}
+
+main{padding:46px 0 20px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;color:var(--ink);margin:0 0 10px;font-weight:800}
+h2{font-size:21px;line-height:1.3;color:var(--ink);margin:38px 0 10px;font-weight:700}
+h3{font-size:17px;color:var(--ink);margin:22px 0 6px;font-weight:700}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:6px}
+.meta{font-size:14px;color:var(--ink-3);margin-bottom:26px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:22px 24px;margin:20px 0}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.ua{border-left:3px solid var(--mint)}
+
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 16px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line-2);vertical-align:top}
+th{color:var(--ink);font-weight:700;background:var(--card-2)}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+code{font-family:ui-monospace,Consolas,monospace;font-size:13.5px;background:var(--card-2);
+  padding:1px 6px;border-radius:6px;color:var(--ink)}
+
+footer{border-top:1px solid var(--line-2);margin-top:60px;padding:26px 0 40px;font-size:14px;color:var(--ink-3)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--ink-3)}
+footer nav{display:flex;gap:16px;flex-wrap:wrap}
+
+@media (max-width:700px){
+  body{font-size:15.5px}
+  .box{padding:18px}
+  th,td{padding:8px 7px}
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sepityi Ads Toolkit · internal Google Ads API tool</title>
+<meta name="description" content="Sepityi Ads Toolkit is an internal tool built by Tymofii Sepityi on the Google Ads API for reporting, campaign management and keyword research in the Google Ads accounts he manages.">
+<meta name="theme-color" content="#0A0C10">
+<link rel="canonical" href="https://sepityi.com/ads-toolkit.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0C10'/%3E%3Crect x='6' y='20' width='4' height='6' rx='2' fill='%23566173'/%3E%3Crect x='14' y='14' width='4' height='12' rx='2' fill='%23566173'/%3E%3Crect x='22' y='7' width='4' height='19' rx='2' fill='%233DDC97'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/doc.css">
+</head>
+<body>
+
+<header class="head">
+  <div class="wrap">
+    <a class="brand" href="/"><i></i>Tymofii Sepityi</a>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/ads-toolkit.html" aria-current="page">Ads Toolkit</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <h1>Sepityi Ads Toolkit</h1>
+  <p class="meta">An internal Google Ads API tool · Owner and sole operator: Tymofii Sepityi, independent Google Ads specialist (self-employed), Kyiv, Ukraine · Last updated: 17 October 2026</p>
+
+  <div class="box ua" lang="uk">
+    <p><strong>Коротко українською.</strong> Sepityi Ads Toolkit: мій власний внутрішній інструмент на Google Ads API.
+      Ним користуюсь тільки я, для акаунтів, які веду: мої власні та акаунти клієнтів, що самі надали
+      мені доступ. Інструмент робить звіти, допомагає будувати й налаштовувати кампанії, чистити
+      пошукові запити і рахувати прогнози бюджету через Keyword Planner. Публічно він не продається і
+      третім особам не надається.</p>
+  </div>
+
+  <h2>What the toolkit is</h2>
+  <p>Sepityi Ads Toolkit is a set of command-line tools written in Python with the official
+    <code>google-ads</code> client library. I use it to run my day-to-day work as a Google Ads specialist:
+    reporting, account setup, search-term cleanup and media planning for the advertisers I work with.</p>
+  <ul>
+    <li><strong>Who uses it:</strong> only me, Tymofii Sepityi. There are no other users, no public sign-up and no login page.</li>
+    <li><strong>Which accounts it touches:</strong> my own Google Ads accounts and the accounts of my clients
+      that are linked to my manager account <strong>Sepityi MCC (738-802-5570)</strong> after the client has accepted the link request.</li>
+    <li><strong>How it authenticates:</strong> OAuth 2.0 (desktop flow) with the single scope
+      <code>https://www.googleapis.com/auth/adwords</code>, signed in as my own Google account.</li>
+    <li><strong>Distribution:</strong> the toolkit is not sold, not offered as a service and not given to third parties.</li>
+  </ul>
+
+  <h2>What it does</h2>
+
+  <h3>1. Reporting</h3>
+  <p>Pulls daily and monthly performance (impressions, clicks, cost, conversions, conversion value,
+    search terms, auction metrics) with GAQL queries and builds a monthly report for each client:
+    what was done, what changed month over month and what is planned next.</p>
+
+  <h3>2. Search-term monitoring</h3>
+  <p>Once a day reads the search terms report, flags irrelevant queries and prepares a list of negative
+    keywords. By default it runs in review mode and changes nothing; negatives are added only after I confirm the list.</p>
+
+  <h3>3. Campaign management</h3>
+  <p>Creates and edits campaigns, ad groups, keywords, negative keyword lists, responsive search ads
+    and assets (sitelinks, callouts, structured snippets) from a prepared plan. New campaigns are always
+    created in <strong>PAUSED</strong> status, so nothing starts spending until I and the client review it in the Google Ads interface.</p>
+
+  <h3>4. Pre-launch audit</h3>
+  <p>Reads the account structure and settings (networks, locations, languages, bidding, conversion
+    actions, ads) and checks them against my checklist before a campaign goes live. Read-only.</p>
+
+  <h3>5. Keyword research and forecasts</h3>
+  <p>Uses Keyword Planner through the API to collect keyword ideas with search volume and to forecast
+    clicks, impressions and cost for a planned budget. The result is a media plan the client sees
+    before agreeing to a budget. This is the main reason I need Basic access: Keyword Planner is not available at Explorer level.</p>
+
+  <h2>Google Ads API services used</h2>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>Service</th><th>Methods</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>CustomerService</td><td>ListAccessibleCustomers</td><td>List accounts available to my manager account</td></tr>
+      <tr><td>GoogleAdsService</td><td>Search, SearchStream</td><td>Reporting and audits (read-only GAQL)</td></tr>
+      <tr><td>CampaignService, CampaignBudgetService, AdGroupService</td><td>Mutate</td><td>Create and edit campaigns, budgets, ad groups</td></tr>
+      <tr><td>AdGroupCriterionService, CampaignCriterionService</td><td>Mutate</td><td>Keywords, negatives, locations, languages</td></tr>
+      <tr><td>SharedSetService, SharedCriterionService</td><td>Mutate</td><td>Negative keyword lists</td></tr>
+      <tr><td>AdGroupAdService</td><td>Mutate</td><td>Responsive search ads</td></tr>
+      <tr><td>AssetService, CampaignAssetService</td><td>Mutate</td><td>Sitelinks, callouts, structured snippets</td></tr>
+      <tr><td>KeywordPlanIdeaService</td><td>GenerateKeywordIdeas, GenerateKeywordForecastMetrics</td><td>Keyword research and budget forecasts</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Expected volume is well under 15,000 operations per day: a handful of client accounts, one reporting run per day and occasional builds.</p>
+
+  <h2>How data is handled</h2>
+  <ul>
+    <li>Data is read only from accounts I manage, and only to do the work the account owner hired me for.</li>
+    <li>Reports go only to the owner of that account. Data from one client is never shown to another client.</li>
+    <li>OAuth credentials and refresh tokens are stored locally on my password-protected workstation and are never published or shared.</li>
+    <li>Google Ads data is not sold, not used for advertising and not combined with data from other sources to build profiles.</li>
+    <li>Full details are in the <a href="/privacy.html">Privacy Policy</a>; the rules of use are in the <a href="/terms.html">Terms of Service</a>.</li>
+  </ul>
+
+  <h2>Example output</h2>
+  <p>Monthly summary as it appears in a client report. <em>Sample data, not a real client.</em></p>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>Campaign</th><th>Clicks</th><th>Cost, UAH</th><th>Conversions</th><th>Cost / conv.</th><th>vs last month</th></tr></thead>
+    <tbody>
+      <tr><td>Search · Services</td><td>1 240</td><td>18 600</td><td>62</td><td>300</td><td>−12% cost / conv.</td></tr>
+      <tr><td>Search · Brand</td><td>410</td><td>1 900</td><td>38</td><td>50</td><td>+5% conversions</td></tr>
+      <tr><td>Performance Max</td><td>2 980</td><td>21 400</td><td>71</td><td>301</td><td>+18% conversions</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Search-term review (sample): <code>repair manual pdf</code> → proposed negative, <code>free</code> → proposed negative,
+    <code>service price kyiv</code> → keep. Nothing is applied before I confirm.</p>
+
+  <h2>Contact</h2>
+  <p>Tymofii Sepityi (Тимофій Ігорович Сепітий), Kyiv, Ukraine<br>
+    Email: <a href="mailto:tymofii@sepityi.com">tymofii@sepityi.com</a> · Phone: <a href="tel:+380962765144">+380 96 276 5144</a></p>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Tymofii Sepityi · Sepityi Ads Toolkit</span>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

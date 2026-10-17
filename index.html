@@ -124,12 +124,16 @@ body{
   margin:0;background:var(--bg);color:var(--ink-2);
   font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
   font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+  /* position:relative обовʼязковий: інакше світіння зверху (body::before)
+     не обрізається і сторінку можна змахнути вбік на телефоні */
+  position:relative;overflow-x:hidden;
 }
 /* кольоровий момент: одна пляма світла зверху */
 body::before{
   content:'';position:absolute;top:-380px;left:50%;transform:translateX(-50%);
-  width:1100px;height:700px;pointer-events:none;z-index:0;
+  /* ширина не більша за екран: інакше пляма вилазить за край
+     і сторінку можна змахнути вбік на телефоні */
+  width:min(1100px,100vw);height:700px;pointer-events:none;z-index:0;
   background:radial-gradient(ellipse at center,rgba(61,220,151,.14),rgba(61,220,151,0) 62%);
 }
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;position:relative;z-index:1}
@@ -306,17 +310,13 @@ button.btn[disabled]{opacity:.6;cursor:default;animation:none}
 .api > p{margin:0 0 20px;font-size:16px;color:var(--ink-2);line-height:1.6}
 .api-note{background:var(--card-2);border:1px solid var(--line-2);border-radius:var(--r-sm);
   padding:20px}
-.api-note{cursor:default}
-.api-note>summary{cursor:pointer;list-style:none;user-select:none}
-.api-note>summary::-webkit-details-marker{display:none}
-.api-note>summary::after{content:"розгорнути";float:right;font-size:11px;color:var(--ink-3);letter-spacing:0;text-transform:none;font-weight:500}
-.api-note[open]>summary::after{content:"згорнути"}
 .api-note .lab{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
   letter-spacing:.08em;text-transform:uppercase;color:var(--mint);margin-bottom:12px}
 .api-note .lab i{width:6px;height:6px;border-radius:50%;background:var(--mint);font-style:normal}
 .api-note p{margin:0 0 12px;font-size:14.5px;color:var(--ink-3);line-height:1.65}
 .api-note ul{margin:0;padding-left:19px;font-size:14px;color:var(--ink-3);line-height:1.7}
 .api-note li{margin-bottom:5px}
+.api-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:14.5px;font-weight:600}
 
 /* ── контакти ──────────────────────────────── */
 .contact{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
@@ -338,24 +338,11 @@ footer{border-top:1px solid var(--line-2);margin-top:70px;padding:30px 0 40px}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer p{margin:0 0 5px;font-size:14px;color:var(--ink-3)}
 footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
-.legal{display:flex;gap:18px;font-size:14px}
-.legal button{background:none;border:0;color:var(--ink-3);cursor:pointer;
-  font:inherit;text-decoration:underline;padding:0}
-.legal button:hover{color:var(--ink)}
-
-/* ── модалки ───────────────────────────────── */
-.modal{position:fixed;inset:0;z-index:100;background:rgba(5,7,10,.8);
-  backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px}
-.modal.open{display:flex}
-.modal-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
-  max-width:540px;width:100%;max-height:80vh;overflow-y:auto;padding:26px}
-.modal-top{display:flex;align-items:center;justify-content:space-between;gap:14px;
-  padding-bottom:14px;border-bottom:1px solid var(--line-2);margin-bottom:16px}
-.modal-top h4{margin:0;font-size:18px;font-weight:700;color:var(--ink)}
-.modal-top button{background:var(--card-2);border:1px solid var(--line);color:var(--ink-2);
-  font:inherit;font-size:13.5px;padding:6px 13px;border-radius:8px;cursor:pointer}
-.modal-box p{margin:0 0 10px;font-size:14.5px;color:var(--ink-3);line-height:1.65}
-.modal-box p.h{color:var(--ink);font-weight:700;margin-top:16px}
+/* Privacy і Terms — справжні сторінки, не модалки:
+   Google brand verification шукає на головній робоче посилання на політику */
+.legal{display:flex;gap:18px;font-size:14px;flex-wrap:wrap}
+.legal a{color:var(--ink-3);text-decoration:underline;text-underline-offset:2px}
+.legal a:hover{color:var(--ink)}
 
 /* ── поява ─────────────────────────────────── */
 .rise{opacity:0;transform:translateY(10px);animation:rise .55s cubic-bezier(.2,.7,.3,1) forwards}
@@ -374,7 +361,7 @@ footer .fine{font-size:13px;color:#6C7688;line-height:1.6}
 }
 @media (max-width:700px){
   body{font-size:15.5px}
-  .g3,.g2,.pr,.cgrid{grid-template-columns:1fr}
+  .g3,.g2,.pr,.cgrid,.cat,.form-row{grid-template-columns:1fr}
   .head .wrap{flex-direction:column;align-items:flex-start;gap:11px}
   .nav{gap:16px;font-size:14px}
   .brand span,.brand b{display:none}
@@ -471,7 +458,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#cases">Кейси</a>
       <a href="#services">Послуги</a>
       <a href="#method">Метод</a>
-      <a href="#api">Чому API</a>
+      <a href="#api">Ads Toolkit</a>
       <a href="#form">Заявка</a>
       <a href="#contacts">Контакти</a>
     </nav>
@@ -695,33 +682,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- API -->
   <section class="sec" id="api">
     <div class="wrap">
-      <p class="eyebrow">Чому API</p>
-      <h2>Маркетингова автоматизація</h2>
+      <p class="eyebrow">Sepityi Ads Toolkit</p>
+      <h2>Власний інструмент на Google Ads API</h2>
       <div class="api">
-        <p>Я використовую <strong>Google Ads API</strong> для автоматизації звітів і побудови
-          власних модулів аналітики. Це дає доступ до щоденної статистики напряму і дозволяє
-          робити зведені звіти для клієнтів без ручних помилок.</p>
+        <p><strong>Sepityi Ads Toolkit</strong> це мій внутрішній інструмент на Google Ads API.
+          Ним користуюсь тільки я, для акаунтів, які веду. Він збирає щоденну статистику напряму,
+          робить зведені звіти без ручних помилок, допомагає будувати кампанії і рахує прогнози
+          бюджету через Keyword Planner.</p>
 
-        <details class="api-note">
-          <summary class="lab"><i></i>Технічна інформація для Google API Audit Team</summary>
-          <p>Цей веб-ресурс є офіційним сайтом-портфоліо незалежного спеціаліста з маркетингу.
-            Я подаю запит на отримання <strong>Developer Token</strong> для розробки внутрішнього
-            застосунку (<strong>Internal Tool</strong>), який працює з рекламними акаунтами під
-            керуванням мого MCC-акаунта: моїми власними та акаунтами клієнтів, які надали мені доступ.</p>
+        <div class="api-note" lang="en">
+          <p class="lab"><i></i>About the app · Sepityi Ads Toolkit</p>
+          <p>Sepityi Ads Toolkit is an internal Python tool built on the Google Ads API by Tymofii Sepityi,
+            an independent Google Ads specialist. Only he operates it, for his own Google Ads accounts and for
+            client accounts linked to his manager account (Sepityi MCC 738-802-5570). It is not sold or offered to third parties.</p>
           <ul>
-            <li><strong>Звітність:</strong> автоматичне вивантаження щоденних метрик (покази, кліки,
-                конверсії, пошукові запити) та побудова зведених звітів для клієнтів.</li>
-            <li><strong>Керування кампаніями:</strong> створення й редагування кампаній, груп оголошень,
-                ключових слів, мінус-слів та адаптивних пошукових оголошень.</li>
-            <li><strong>Дослідження та прогнози:</strong> збір семантики й побудова медіапланів через
-                Keyword Planner (KeywordPlanIdeaService / GenerateKeywordForecastMetrics).</li>
-            <li><strong>Обмеження доступу:</strong> ПЗ використовується виключно мною та безпосередніми
-                клієнтами, яким я надаю послуги. Доступ третім особам заборонено; дані клієнтів
-                не передаються й не перепродаються.</li>
-            <li><strong>Безпека:</strong> дані обробляються згідно з Google Ads API Terms &amp; Conditions
-                та Limited Use Requirements.</li>
+            <li><strong>Reporting:</strong> daily and monthly metrics (impressions, clicks, cost, conversions, search terms) and monthly client reports.</li>
+            <li><strong>Campaign management:</strong> creating and editing campaigns, ad groups, keywords, negative keywords, responsive search ads and assets. New campaigns are always created paused.</li>
+            <li><strong>Keyword research and forecasts:</strong> Keyword Planner (KeywordPlanIdeaService: GenerateKeywordIdeas, GenerateKeywordForecastMetrics) for media plans.</li>
+            <li><strong>Data:</strong> used only for the owner of each account, never sold or shared with other clients, handled under the Google API Services User Data Policy and the Google Ads API Terms.</li>
           </ul>
-        </details>
+          <div class="api-links">
+            <a href="/ads-toolkit.html">How the toolkit works</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Service</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -772,7 +757,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <label class="consent">
             <input type="checkbox" name="Згода" value="так" required>
             <span>Погоджуюсь на обробку моїх даних для звʼязку зі мною та приймаю
-              <button type="button" class="consent-link" onclick="toggleModal('privacy')">політику конфіденційності</button>.</span>
+              <a class="consent-link" href="/privacy.html" target="_blank" rel="noopener">політику конфіденційності</a>.</span>
           </label>
           <div class="form-foot">
             <button class="btn btn-xl" type="submit">Надіслати заявку</button>
@@ -820,40 +805,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          <a href="mailto:tymofii@sepityi.com">tymofii@sepityi.com</a> · <a href="tel:+380962765144">+380 96 276 5144</a></p>
     </div>
     <div class="legal">
-      <button type="button" onclick="toggleModal('privacy')">Privacy Policy</button>
-      <button type="button" onclick="toggleModal('terms')">Terms of Service</button>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="/ads-toolkit.html">Sepityi Ads Toolkit</a>
     </div>
   </div>
 </footer>
-
-<div class="modal" id="modal-privacy">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-label="Privacy Policy">
-    <div class="modal-top">
-      <h4>Privacy Policy</h4>
-      <button type="button" onclick="toggleModal('privacy')">Закрити</button>
-    </div>
-    <p class="h">1. Захист даних</p>
-    <p>Ми збираємо виключно добровільно надані контактні дані зацікавлених замовників (Email) для комунікації.</p>
-    <p class="h">2. Google Ads API та конфіденційність</p>
-    <p>Будь-які маркетингові дані, отримані з Google Ads API, використовуються виключно для потреб
-       автоматизації звітності відповідних клієнтів (Limited Use Requirements).</p>
-  </div>
-</div>
-
-<div class="modal" id="modal-terms">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-label="Terms of Service">
-    <div class="modal-top">
-      <h4>Terms of Service</h4>
-      <button type="button" onclick="toggleModal('terms')">Закрити</button>
-    </div>
-    <p class="h">1. Опис сервісу</p>
-    <p>Тимофій Сепітий надає послуги супроводу контекстної реклами та програмування автоматичних
-       звітів за допомогою Google Ads API.</p>
-    <p class="h">2. Права інтелектуальної власності</p>
-    <p>Всі розроблені скрипти звітування є комерційними розробками та недоступні публічно
-       без додаткового погодження сторін.</p>
-  </div>
-</div>
 
 <script>
 // поява блоків при прокручуванні
@@ -912,17 +869,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 })();
 
-function toggleModal(id){
-  document.getElementById('modal-' + id).classList.toggle('open');
-}
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape'){
-    document.querySelectorAll('.modal.open').forEach(function(m){ m.classList.remove('open'); });
-  }
-});
-document.querySelectorAll('.modal').forEach(function(m){
-  m.addEventListener('click', function(e){ if(e.target === m) m.classList.remove('open'); });
-});
 </script>
 
 
